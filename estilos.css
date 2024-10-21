@@ -925,3 +925,10 @@ button:hover {
         width: 100%;
     }
 }
+.footer{
+    width: 100vw;
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
