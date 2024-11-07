@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function validarInput2() {
         let valor = parseFloat(input2.value);
-        if (isNaN(valor) || valor < 0 || valor > 100) {
+        if (isNaN(valor) || valor < 0 || valor > 10000000) {
             errorMessage.textContent = 'Ingrese un descuento válido (0-100).';
             input2.value = '';
         } else {
