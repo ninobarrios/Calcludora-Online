@@ -28,8 +28,13 @@
         rel="stylesheet">
     <link rel="icon" href="logo1.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.1/katex.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.1/katex.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.1/contrib/auto-render.min.js"></script>
+    
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             renderMathInElement(document.body);
@@ -56,16 +61,23 @@
 
 <body>
     <div class="encabezado">
-        <h1>Calculadora de Porcentaje Online</h1>
-    </div>
+        <div class="tituloencabezado">
+            <h1>Calculadora de Porcentaje Online</h1>
+            <p>Aprende porcentajes de forma simple y práctica: desde lo básico hasta lo avanzado, con calculadoras,
+                ejercicios resueltos y trucos que te harán dominar el 100%.</p>
 
-    <div class="main">
-        <h2>Un porcentaje es una manera sencilla de expresar cómo una parte de algo se relaciona con el total. Cuando
-            decimos que algo es un porcentaje, lo estamos comparando con 100 partes. Por ejemplo, si tenemos un pastel
-            dividido en 100 pedazos y nos comemos 20, podríamos decir que hemos comido el 20% del pastel. La idea es que
-            el porcentaje siempre representa una fracción del total, y ese total lo estamos considerando como si fueran
-            100 partes.</h2>
+        </div>
+
         <div class="grafico">
+            <h2>Un porcentaje es una manera sencilla de expresar cómo una parte de algo se relaciona con el total.
+                Cuando
+                decimos que algo es un porcentaje, lo estamos comparando con 100 partes. Por ejemplo, si tenemos un
+                pastel
+                dividido en 100 pedazos y nos comemos 20, podríamos decir que hemos comido el 20% del pastel. La idea es
+                que
+                el porcentaje siempre representa una fracción del total, y ese total lo estamos considerando como si
+                fueran
+                100 partes.</h2>
             <div class="graficotabla">
                 <table>
                     <tbody></tbody>
@@ -74,52 +86,108 @@
             <div class="calculograficotabla">
                 <div class="calculograficotablacontent">
                     <label for="input1">Ingrese un porcentaje:</label>
-                    <input id="input1" type="number" value="74" placeholder="%" min="0" max="100">
-                    <span id="percentageDisplay">% de 100</span>
+                    <input id="input1" class="inputuno" type="text" value="74%" placeholder="%" min="0" max="100">
+                    <label id="percentageDisplay" style="color: #ffffff;"> de 100</label>
                 </div>
             </div>
         </div>
 
+    </div>
+
+    <div class="main">
+
         <div id="error-message" style="color: rgb(228, 3, 3);"></div>
 
         <div class="usos">
-            <h3>Usos de los Porcentajes:</h3>
-            <ul class="list-spacing">
-                <li><strong>Descuentos en Compras:</strong> Los descuentos se expresan como un porcentaje del precio
-                    original. Por ejemplo, un 20% de descuento en un artículo.</li>
-                <li><strong>Finanzas y Economía:</strong> Para calcular el interés, las tasas de inflación, los
-                    descuentos en compras, y para analizar cambios en precios o en el valor de inversiones.</li>
-                <li><strong>Estadísticas:</strong> Para mostrar proporciones en encuestas o estudios, como la proporción
-                    de personas que prefieren una opción sobre otra.</li>
-                <li><strong>Educación:</strong> Para evaluar el rendimiento académico, como en calificaciones de
-                    exámenes.</li>
-                <li><strong>Salud:</strong> Para medir la composición corporal, como el porcentaje de grasa corporal o
-                    el porcentaje de progreso en un plan de tratamiento.</li>
-                <li><strong>Cálculos en la vida cotidiana:</strong> Para ajustar recetas de cocina, calcular propinas en
-                    restaurantes, o determinar el ahorro en una oferta especial.</li>
-                <li><strong>Diseño y Desarrollo Web:</strong> Para ajustar el tamaño de elementos en relación con el
-                    tamaño de su contenedor, como en CSS con propiedades como width, padding, y margin.</li>
-            </ul>
+            <div class="usosinterno">
+                <h3> Usos de los Porcentajes</h3>
+                <div class="cards-container">
+
+                    <div class="card">
+                        <h4>🔖 Descuentos en Compras</h4>
+                        <p>¿Ofertas irresistibles? ¡Gracias al porcentaje! Calcula cuánto te ahorras fácilmente.</p>
+                        <ul>
+                            <li>🛍️ S/200 con 25% de descuento → pagas S/150.</li>
+                            <li>💥 “70% OFF” significa gran rebaja del precio original.</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h4>📊 Finanzas y Economía</h4>
+                        <p>Los porcentajes mueven el mundo del dinero: intereses, inflación, impuestos… ¡todo!</p>
+                        <ul>
+                            <li>💰 8% de interés sobre S/1000 → ganas S/80 al año.</li>
+                            <li>📉 6% de inflación reduce tu poder adquisitivo.</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h4>📈 Estadísticas</h4>
+                        <p>¿Encuestas? ¿Datos? Los porcentajes cuentan historias sin usar mil números.</p>
+                        <ul>
+                            <li>📊 El 72% dice “Sí” → 3 de cada 4 están de acuerdo.</li>
+                            <li>🚬 El 18% fuma → análisis social en acción.</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h4>🏫 Educación</h4>
+                        <p>¿Aprobado o desaprobado? Los porcentajes dicen si pasas el curso.</p>
+                        <ul>
+                            <li>📘 45/50 puntos → ¡90% de nota!</li>
+                            <li>🎯 Mínimo 70% para aprobar una materia.</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h4>🩺 Salud</h4>
+                        <p>Desde grasa corporal hasta eficacia médica, ¡el porcentaje también cuida tu salud!</p>
+                        <ul>
+                            <li>💪 22% de grasa corporal: dentro del rango saludable.</li>
+                            <li>💊 Tratamiento efectivo en el 85% de los casos.</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h4>🧮 Vida cotidiana</h4>
+                        <p>Los porcentajes te salvan en el restaurante o en la cocina, ¡literal!</p>
+                        <ul>
+                            <li>🍽️ 10% de propina en S/150 → dejas S/15.</li>
+                            <li>👨‍🍳 Cocinas para 2 → reduce la receta en 50%.</li>
+                        </ul>
+                    </div>
+
+
+
+                </div>
+            </div>
+
         </div>
+
+
+
 
         <div class="calculadoras">
             <h1>Calculadoras de Porcentaje</h1>
 
-            <div class="calculadoracontenedor">
-                <h2>Porcentaje simple</h2>
-                <ul class="list-spacing" style="list-style-type: none;">
-                    <li><strong>Uso: </strong> Calcular una parte de un total, como en descuentos y promociones.</li>
-                    <li><strong>Ejemplo: </strong></li>
-                </ul>
+            <div id="calculadoraSimple" class="calculadoracontenedor">
+                <div class="percentage-card-header">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" />
+                    </svg>
+                    <h2>Porcentaje Simple</h2>
+                </div>
+                <div class="centerUse"> Calcular una parte de un total, como en descuentos y promociones.</div>
 
                 <div class="operacion">
                     <span>El</span>
-                    <input id="input2" type="number" value="15" placeholder="%" min="1" max="1000">
-                    <span>%, de</span>
-                    <input id="input3" type="number" value="500" placeholder="Número" min="0" max="100000">
+                    <input id="input2" type="text" value="15%" placeholder="%" />
+                    <span>, de</span>
+                    <input  id="input3" type="number" value="500" placeholder="Número" min="0" max="100000">
                     <span>es igual a:</span>
                     <input id="resultado" type="text"
-                        style="background-color: #FFB30D; border: none; width: 95px; color: rgb(0, 0, 0) !important;"
+                        style="background-color: #ffd98e; border: none; width: 95px; color: rgb(0, 0, 0) !important;"
                         placeholder="Resultado" readonly>
                 </div>
                 <ul class="list-spacing" style="list-style-type: none;">
@@ -128,46 +196,50 @@
                         <label id="discount-amount" style="display: none; "></label>
                     </li>
                 </ul>
-                <div class="showmorebtn">
-                    <a href="#" id="toggle-button">Ver Fórmula</a>
+                <div class="showmorebtn" id="toggle-button">
+                    <a href="#">Ver Fórmula</a>
                 </div>
+
                 <div class="showmoredistribution" id="extra-content" style="display: none;">
                     <div class="showmore1">
                         <div class="grafico_formula">
                             <table>
+                                <caption><strong>Relación porcentual entre dos cantidades</strong></caption>
                                 <thead>
                                     <tr>
-                                        <th>n</th>
-                                        <th>%</th>
+                                        <th>Cantidad</th>
+                                        <th>Porcentaje (%)</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>x</td>
-                                        <td><label class="input2-value-label"></label></td>
+                                        <td><span class="variable">X</span></td>
+                                        <td><span class="input2-value-label">%</span></td>
                                     </tr>
                                     <tr>
-                                        <td><label class="input3-value-label"></label></td>
-                                        <td>100</td>
+                                        <td><span class="input3-value-label">n</span></td>
+                                        <td>100%</td>
                                     </tr>
                                 </tbody>
                             </table>
-
                         </div>
+
                     </div>
 
                     <div class="showmore1">
                         <div class="formula">
-                            <div class="fomrulauno">x=</div>
-                            <div class="fomrulados">
-                                <div class="formuladostop"><label class="input2-value-label"></label> . <label
+                            <div class="formula-part">x =</div>
+                            <div class="fraction">
+                                <div class="numerator">
+                                    <label class="input2-value-label"></label> × <label
                                         class="input3-value-label"></label>
                                 </div>
-                                <div class="fomrmuladosline"></div>
-                                <div class="formuladosbottom" style="font-weight: bold;">100</div>
+                                <div class="fraction-line"></div>
+                                <div class="denominator">100</div>
                             </div>
-                            <div class="fomrulautres">=<label class="resultado-value-label"></label></div>
+                            <div class="formula-part">= <label class="resultado-value-label"></label></div>
                         </div>
+
                     </div>
                     <div class="showmore1">
                         <canvas id="myPieChart" width="400" height="400"></canvas>
@@ -176,60 +248,68 @@
                             Porcentaje:
                             <label class="input2-value-label"></label>%
                         </div>
-                        <div>
-
-                        </div>
+    
                     </div>
 
                 </div>
             </div>
             <div class="calculadoracontenedor">
-                <h2>Porcentaje de Total</h2>
+
+                <div class="percentage-card-header">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" />
+                    </svg>
+                    <h2>Porcentaje De Total</h2>
+                </div>
                 <ul class="list-spacing" style="list-style-type: none;">
-                    <li><strong>Uso: </strong> El "porcentaje total" indica la proporción de un valor respecto al total
-                        general.</li>
-                    <li><strong>Ejemplo: </strong></li>
+                    <div class="centerUse"> El "porcentaje total" indica la proporción de un valor respecto al total
+                        general.</div>
                 </ul>
 
                 <div class="operacion">
                     <span>Si el</span>
-                    <input id="porcentajebox2" type="number" value="10" placeholder="%" min="1" max="1000">
-                    <span>%,   es</span>
+                    <input id="porcentajebox2" type="text" value="10%" placeholder="%" />
+                    <span>, es</span>
                     <input id="parteporcentajebox2" type="number" value="50" placeholder="Número" min="0" max="100000">
                     <span>, entonces el total es igual a:</span>
                     <input id="resultadototalbox2" type="text"
-                        style="background-color: #FFB30D; border: none; width: 95px; color: rgb(0, 0, 0) !important;"
+                        style="background-color: #ffd98e; border: none; width: 95px; color: rgb(0, 0, 0) !important;"
                         placeholder="Resultado" readonly>
                 </div>
                 <label id="labelParteporcentajebox2" style="display: none; "></label>
                 <label id="labelPorcentajebox2" style="display: none; "></label>
                 <label id="labelResultadototalbox2" style="display: none; "></label>.
-                <div class="showmorebtn">
-                    <a href="#" id="toggle-button2">Ver Fórmula</a>
+                <div class="showmorebtn" id="toggle-button2">
+                    <a href="#">Ver Fórmula</a>
                 </div>
 
                 <div class="showmoredistribution" id="extra-content2" style="display: none;">
                     <div class="showmore1">
                         <div class="grafico_formula">
                             <table>
+                                <caption><strong>Relación porcentual de una cantidad respecto al total</strong>
+                                </caption>
                                 <thead>
                                     <tr>
-                                        <th>n</th>
-                                        <th>%</th>
+                                        <th>Cantidad</th>
+                                        <th>Porcentaje (%)</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td><label class="input2-value-label2"></label></td>
-                                        <td> <label class="input2-percentage-label"></label></td>
+                                        <td><label class="input2-value-label2">sds</label></td>
+                                        <td style="color: #00796b; font-weight: bold;"><label
+                                                class="input2-percentage-label"></label>%</td>
                                     </tr>
                                     <tr>
-                                        <td>x</td>
-                                        <td>100</td>
+                                        <td><span class="variable">X</span></td>
+                                        <td>100%</td>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
+
                     </div>
 
                     <div class="showmore1">
@@ -237,9 +317,10 @@
                             <div class="fomrulauno">x=</div>
                             <div class="fomrulados">
                                 <div class="formuladostop" style="font-weight: bold;">
-                                    <label class="input2-value-label2"></label> <span style="font-weight: 500;">. 100</span>
+                                    <label class="input2-value-label2"></label> <span style="font-weight: 500;">.
+                                        100</span>
                                 </div>
-                                <div class="fomrmuladosline"></div>
+                                <div class="fraction-line"></div>
                                 <label class="input2-percentage-label"></label>
                             </div>
                             <div class="fomrulautres">
@@ -261,11 +342,16 @@
             </div>
 
             <div class="calculadoracontenedor">
-                <h2>Porcentaje Por Parte</h2>
+                <div class="percentage-card-header">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" />
+                    </svg>
+                    <h2>Porcentaje Por Parte</h2>
+                </div>
                 <ul class="list-spacing" style="list-style-type: none;">
-                    <li><strong>Uso: </strong> El porcentaje por parte es la cantidad que representa una porción en
-                        relación a un total.</li>
-                    <li><strong>Ejemplo: </strong></li>
+                    <div class="centerUse">El porcentaje por parte es la cantidad que representa una porción en
+                        relación a un total.</div>
                 </ul>
 
                 <div class="operacion">
@@ -275,8 +361,8 @@
                     <input id="parteporcentajebox3" type="number" value="350" placeholder="Número" min="0" max="100000">
                     <span>representa el </span>
                     <input id="resultadototalbox3" type="text"
-                        style="background-color: #FFB30D; border: none; width: 95px; color: rgb(0, 0, 0) !important;"
-                        placeholder="Resultado" readonly>%
+                        style="background-color: #ffd98e; border: none; width: 95px; color: rgb(0, 0, 0) !important;"
+                        placeholder="Resultado" readonly>
                 </div>
 
                 <ul class="list-spacing" style="list-style-type: none;">
@@ -287,33 +373,35 @@
                     </li>
                 </ul>
 
-                <div class="showmorebtn">
-                    <a href="#" id="toggle-button3">Ver Fórmula</a>
+                <div class="showmorebtn" id="toggle-button3">
+                    <a href="#">Ver Fórmula</a>
                 </div>
 
                 <div class="showmoredistribution" id="extra-content3" style="display: none;">
                     <div class="showmore1">
                         <div class="grafico_formula">
                             <table>
+                                <caption><strong>Relación proporcional de un porcentaje respecto a una cantidad
+                                        base</strong></caption>
                                 <thead>
                                     <tr>
-                                        <th>n</th>
                                         <th>%</th>
+                                        <th>Cantidad</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td><label class="input2-value-label3"></label>
-                                        </td>
-                                        <td>x</td>
+                                        <td><span class="variable">X</span></td>
+                                        <td><label class="input2-value-label3"></label></td>
                                     </tr>
                                     <tr>
+                                        <td>100%</td>
                                         <td><label class="input2-percentage-label3"></label></td>
-                                        <td style="font-weight: bold;">100</td>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
+
                     </div>
 
                     <div class="showmore1">
@@ -321,9 +409,10 @@
                             <div class="fomrulauno">x=</div>
                             <div class="fomrulados">
                                 <div class="formuladostop" style="font-weight: bold;">
-                                    <label class="input2-value-label3"></label> <span style="font-weight: 500;">. 100</span>
+                                    <label class="input2-value-label3"></label> <span style="font-weight: 500;">.
+                                        100</span>
                                 </div>
-                                <div class="fomrmuladosline"></div>
+                                <div class="fraction-line"></div>
                                 <label class="input2-percentage-label3"></label>
                             </div>
                             <div class="fomrulautres">
@@ -335,33 +424,38 @@
 
                     <div class="showmore1">
                         <canvas id="myPieChart3" width="400" height="400"></canvas>
-                        <div>Total: <label class="input2-percentage-label3"></label>
+                        <div>Total: <label class="input3-value-label3"></label>
                             / Porcentaje:
 
-                            <label class="input3-value-label3"></label>%
+                            <label class="input2-percentage-label3"></label>
                         </div>
                     </div>
                 </div>
             </div>
 
             <div class="calculadoracontenedor">
-                <h2>Porcentaje Por Variacion</h2>
+                <div class="percentage-card-header">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" />
+                    </svg>
+                    <h2>Porcentaje Por Variacion</h2>
+                </div>
                 <ul class="list-spacing" style="list-style-type: none;">
-                    <li><strong>Uso: </strong> Calcular un porcentaje basado en otro valor porcentual para ajustar o
-                        comparar proporciones.</li>
-                    <li><strong>Ejemplo: </strong></li>
+                    <div class="centerUse"> Calcular un porcentaje basado en otro valor porcentual para ajustar o
+                        comparar proporciones.</div>
                 </ul>
 
                 <div class="operacion">
                     <span>Si el </span>
-                    <input id="porcentajebox4" type="number" value="90" placeholder="%" min="1" max="1000">
-                    <span>%, es </span>
+                    <input id="porcentajebox4" type="text" value="90%" placeholder="%">
+                    <span>, es </span>
                     <input id="parteporcentajebox4" type="number" value="60" placeholder="Número" min="0" max="100000">
                     <span>, entonces el </span>
-                    <input id="parteporcentajebox42" type="number" value="40" placeholder="Número" min="0" max="100000">
-                    %, es
+                    <input id="parteporcentajebox42" type="text" value="40%" placeholder="Número" min="0" max="100000">
+                    , es
                     <input id="resultadototalbox4" type="text"
-                        style="background-color: #FFB30D; border: none; width: 95px; color: rgb(0, 0, 0) !important;"
+                        style="background-color: #ffd98e; border: none; width: 95px; color: rgb(0, 0, 0) !important;"
                         placeholder="Resultado" readonly>
                 </div>
 
@@ -373,33 +467,36 @@
                     </li>
                 </ul>
 
-                <div class="showmorebtn">
-                    <a href="#" id="toggle-button4">Ver Fórmula</a>
+                <div class="showmorebtn" id="toggle-button4">
+                    <a href="#">Ver Fórmula</a>
                 </div>
 
                 <div class="showmoredistribution" id="extra-content4" style="display: none;">
                     <div class="showmore1">
                         <div class="grafico_formula">
                             <table>
+                                <caption><strong>Comparación porcentual entre dos cantidades</strong></caption>
                                 <thead>
                                     <tr>
-                                        <th>n</th>
-                                        <th>%</th>
+                                        <th>Cantidad</th>
+                                        <th>Porcentaje (%)</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td><label class="input2-value-label4"></label>
-                                        </td>
-                                        <td><label class="input2-percentage-label4"></label></td>
+                                        <td><label class="input2-value-label4"></label></td>
+                                        <td style="color: #00796b; font-weight: bold;"><label
+                                                class="input2-percentage-label4"></label>%</td>
                                     </tr>
                                     <tr>
-                                        <td>x</td>
-                                        <td><label class="parteporcentajebox42"></label></td>
+                                        <td><span class="variable">X</span></td>
+                                        <td style="color: #00796b; font-weight: bold;"><label
+                                                class="parteporcentajebox42"></label>%</td>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
+
                     </div>
 
                     <div class="showmore1">
@@ -410,7 +507,7 @@
                                     <label class="input2-value-label4"></label> . <label
                                         class="parteporcentajebox42"></label>
                                 </div>
-                                <div class="fomrmuladosline"></div>
+                                <div class="fraction-line"></div>
                                 <label class="input2-percentage-label4"></label>
                             </div>
                             <div class="fomrulautres">
@@ -437,71 +534,46 @@
 
         </div>
         <section id="calculoRapido">
-            <h2>Cálculo rápido de algunos porcentajes</h2>
-            <ul class="list-spacing">
-                <li><strong>El 50%:</strong> Es la mitad, por lo que dividimos entre 2.</li>
-                <li><strong>El 25%:</strong> Es la cuarta parte, dividimos entre 4.</li>
-                <li><strong>El 75%:</strong> Son las tres cuartas partes, dividimos entre 4 y multiplicamos por 3.</li>
-                <li><strong>El 10%:</strong> Es la décima parte, dividimos entre 10.</li>
-                <li><strong>El 20%:</strong> Es la quinta parte, dividimos entre 5.</li>
-            </ul>
+            <h2 style="text-align: center; width: 100%;">🎯 Cálculo Rápido de Porcentajes Comunes</h2>
+            <p>¡Aprende a calcular porcentajes en segundos! Aquí tienes algunos trucos fáciles:</p>
+            <div class="porcentaje-tips">
+                <div class="tip">
+                    <h3>🔵 50%</h3>
+                    <p>¡La mitad de cualquier número!<br><strong>Ejemplo:</strong> 50% de 80 = 80 ÷ 2 =
+                        <strong>40</strong>
+                    </p>
+                </div>
+                <div class="tip">
+                    <h3>🟢 25%</h3>
+                    <p>¡Una cuarta parte!<br><strong>Ejemplo:</strong> 25% de 80 = 80 ÷ 4 = <strong>20</strong></p>
+                </div>
+                <div class="tip">
+                    <h3>🟡 75%</h3>
+                    <p>¡Tres cuartas partes!<br><strong>Ejemplo:</strong> 75% de 80 = (80 ÷ 4) × 3 = <strong>60</strong>
+                    </p>
+                </div>
+                <div class="tip">
+                    <h3>🟠 10%</h3>
+                    <p>¡Una décima parte!<br><strong>Ejemplo:</strong> 10% de 80 = 80 ÷ 10 = <strong>8</strong></p>
+                </div>
+                <div class="tip">
+                    <h3>🔴 20%</h3>
+                    <p>¡Una quinta parte!<br><strong>Ejemplo:</strong> 20% de 80 = 80 ÷ 5 = <strong>16</strong></p>
+                </div>
+            </div>
         </section>
-        <h1>Resuelve los problemas de porcentaje rapidos</h1>
-        <form id="quizForm">
-            <table style="border-collapse: collapse;">
-                <thead>
-                    <tr>
-                        <th scope="col">Pregunta</th>
-                        <th scope="col">Respuesta</th>
-                        <th scope="col">Resultado</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><label for="q1">a) 50% de 60 =</label></td>
-                        <td><input type="number" id="q1" name="q1"></td>
-                        <td><span id="result1">-</span></td>
-                    </tr>
-                    <tr>
-                        <td><label for="q2">b) 50% de 24 =</label></td>
-                        <td><input type="number" id="q2" name="q2"></td>
-                        <td><span id="result2">-</span></td>
-                    </tr>
-                    <tr>
-                        <td><label for="q3">c) 25% de 840 =</label></td>
-                        <td><input type="number" id="q3" name="q3"></td>
-                        <td><span id="result3">-</span></td>
-                    </tr>
-                    <tr>
-                        <td><label for="q4">d) 25% de 2000 =</label></td>
-                        <td><input type="number" id="q4" name="q4"></td>
-                        <td><span id="result4">-</span></td>
-                    </tr>
-                    <tr>
-                        <td><label for="q5">e) 75% de 400 =</label></td>
-                        <td><input type="number" id="q5" name="q5"></td>
-                        <td><span id="result5">-</span></td>
-                    </tr>
-                    <tr>
-                        <td><label for="q6">f) 75% de 20 =</label></td>
-                        <td><input type="number" id="q6" name="q6"></td>
-                        <td><span id="result6">-</span></td>
-                    </tr>
-                    <tr>
-                        <td><label for="q7">g) 10% de 90 =</label></td>
-                        <td><input type="number" id="q7" name="q7"></td>
-                        <td><span id="result7">-</span></td>
-                    </tr>
-                    <tr>
-                        <td><label for="q8">h) 20% de 500 =</label></td>
-                        <td><input type="number" id="q8" name="q8"></td>
-                        <td><span id="result8">-</span></td>
-                    </tr>
-                </tbody>
-            </table>
-            <button class="showmorebtn" type="button" onclick="checkAnswers()"
-                style="background-color: #03A61C;">Verificar</button>
-        </form>
+        <section id="quizSection">
+            <h2>🧠 Resuelve Rápido Problemas de Porcentaje</h2>
+            <p>
+                ¡Pon a prueba tu agilidad mental resolviendo estos ejercicios! Si lo necesitas, puedes usar una de las
+                calculadoras de nuestra página.
+                👉 <a href="#calculadoraSimple">Haz clic aquí</a> para ir directamente a la calculadora de porcentaje.
+            </p>
+            <form id="quizForm">
+                <div class="quiz-table" id="quizContainer"></div>
+                <button class="showmorebtn" type="button" onclick="checkAnswers()">✅ Verificar</button>
+            </form>
+        </section>
 
 
 

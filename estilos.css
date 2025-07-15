@@ -2,10 +2,9 @@ html,
 body {
     margin: 0;
     padding: 0;
-    font-family: "Raleway", sans-serif;
+    font-family: "Jost", sans-serif;
     box-sizing: border-box;
     overflow-x: hidden;
-
 }
 
 body {
@@ -14,28 +13,57 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    background-color: #ffffff;
+}
+
+.list-spacing-div {
+    margin: 10px 0px;
 }
 
 .encabezado {
     width: 100vw;
-    height: 150px;
-    background-color: #243a69;
-    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 0px;
+    padding: 0px;
+}
+
+.tituloencabezado {
+    background-image: url('https://png.pngtree.com/background/20210712/original/pngtree-cute-hand-drawn-style-math-education-blue-plaid-background-picture-image_1176978.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 100vw;
+    text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+    padding: 50px 0px;
+    margin: 0px;
+    height: 30vh;
 }
 
 .encabezado h1 {
     font-weight: normal;
-    font-size: 35px;
-    color: white;
+    font-size: 50px;
+    color: rgb(0, 0, 0);
+
+}
+
+.encabezado p {
+    color: hsl(0, 0%, 0%);
+    width: 30vw;
+    text-align: center;
+    font-size: 20px;
+
 }
 
 .main {
     width: 70vw;
     height: auto;
-    background-color: rgba(20, 45, 184, 0.055);
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -43,8 +71,8 @@ body {
 
 .main h2 {
     font-weight: normal;
-    width: 90%;
-    font-size: 16px;
+    width: 60%;
+    font-size: 20px;
     text-align: center;
     margin-top: 50px;
     margin-bottom: 50px;
@@ -56,15 +84,26 @@ body {
     height: auto;
     align-items: center;
     position: relative;
+    flex-direction: column;
+    height: 70vh;
+
+}
+
+.grafico h2 {
+    text-align: center;
+    font-family: "Jost", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    width: 70%;
+    margin-top: 50px;
 }
 
 .graficotabla {
-    width: 50%;
     overflow: auto;
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    margin: auto;
+    margin: 2%;
 }
 
 .graficotabla table {
@@ -81,22 +120,25 @@ body {
     width: 50%;
 }
 
+.usoPorcentajes {
+    text-align: center;
+}
+
 .calculograficotablacontent {
-    background-color: #03A61C;
+    background-color: #7eb9a4;
     padding: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 5px;
-    margin-left: 25px;
+    border-radius: 0px;
 }
 
 .calculograficotablacontent label {
     margin: 10px 0;
-    font-weight: bold;
-    color: rgb(0, 0, 0);
+    font-weight: 400;
+    color: rgb(255, 255, 255);
     padding-right: 10px;
-    font-size: 16px;
+    font-size: 19px;
 }
 
 .calculograficotablacontent input {
@@ -133,30 +175,71 @@ td {
     font-weight: bold;
 }
 
+
+
+/***************************************/
 .usos {
-    width: 80%;
-    margin-top: 20px;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    background-color: #f9f9f9;
-    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 2rem;
+    background: #f8f9fa;
+    width: 100vw;
 }
 
-.usos h3 {
-    margin-top: 0;
+.usosinterno {
+    width: 60%;
+    padding: 0px 20%;
 }
 
-.usos ul {
-    list-style-type: disc;
-    padding-left: 20px;
+.usosinterno h3 {
+    font-size: 35px;
+    font-weight: 500;
+    margin-top: 0px;
 }
 
-.list-spacing li {
-    margin-bottom: 10px;
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1rem;
 }
 
+.card {
+    background: #ffffff;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    width: 300px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    text-align: left;
+}
 
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card h4 {
+    color: #000000;
+    margin-bottom: 0.5rem;
+}
+
+.card p {
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 0.8rem;
+}
+
+.card ul {
+    padding-left: 1rem;
+    list-style-type: none;
+}
+
+.card li {
+    margin-bottom: 0.4rem;
+    font-size: 0.95rem;
+}
+
+/***************************************/
 
 .calculadoras {
     width: 100%;
@@ -178,8 +261,8 @@ td {
 .calculadoracontenedor {
     width: 60%;
     height: auto;
-    background-color: white;
-    padding: 10px 50px;
+    background-color: #f8f8f8;
+    padding: 50px;
     position: relative;
     margin: 10px 0px;
     box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
@@ -221,17 +304,20 @@ input[type="number"]::-webkit-outer-spin-button {
     margin: 0;
 }
 
+.inputuno {
+    width: auto !important;
+}
+
 .showmorebtn {
-    width: 100%;
-    border: 2px solid #03A61C;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 25px;
     font-size: 16px;
     color: #000000;
+    background-color: #7eb9a4 !important;
     font-weight: bold;
     padding: 5px 0px;
+    width: 100%;
 }
 
 .showmorebtn:hover {
@@ -252,57 +338,100 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 .showmore1 {
-    height: 200px;
-    width: 33.33%;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-}
-
-.grafico_formula table {
-    border: 1px solid #c10000;
 }
 
 .grafico_formula {
-    height: 100%;
     width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    padding: 15px;
+    border-radius: 12px;
+    box-sizing: border-box;
 }
 
 .grafico_formula table {
-    width: 150px;
-    height: 100px;
+    width: 100%;
     border-collapse: collapse;
 }
 
-.grafico_formula table th,
-.grafico_formula table td {
-    padding: 12px;
-    border: 1px solid #ddd;
+.grafico_formula th,
+.grafico_formula td {
+    padding: 8px;
     text-align: center;
-    font-family: "Playwrite CU", cursive;
-    font-size: 12px !important;
+    vertical-align: top;
+    height: auto;
+    word-break: break-word;
+    white-space: normal;
+    /* IMPORTANTE para saltos de línea */
 }
 
-.grafico_formula table th {
-    background-color: #03A61C;
-    color: white;
+.grafico_formula td {
+    min-height: 40px;
+    padding: 10px;
+    vertical-align: middle;
 }
 
-.grafico_formula table tr:nth-child(even) {
-    background-color: #f2f2f2;
+.grafico_formula td {
+    padding: 12px 8px;
 }
 
-.grafico_formula table tr:hover {
-    background-color: #ddd;
+
+.grafico_formula caption {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #0a3d62;
 }
 
-.grafico_formula table td {
-    color: #333;
-    font-size: 16px;
+.variable {
+    font-size: 1.2rem;
+    display: inline-block;
+    line-height: 1.4;
 }
+
+.fila-alta td {
+    height: 80px;
+    /* altura personalizada */
+}
+
+.grafico_formula thead {
+    background-color: #ffd98e;
+}
+
+.variable {
+    font-weight: bold;
+    color: #1a73e8;
+}
+
+.input2-value-label4,
+.input2-percentage-label4,
+.parteporcentajebox42,
+.input2-value-label3,
+.input2-percentage-label3,
+.input2-value-label2,
+.input2-percentage-label,
+.input2-value-label,
+.input3-value-label {
+    font-weight: bold;
+    color: #00796b;
+}
+
+
+.variable {
+    font-weight: bold;
+    color: #1a73e8;
+}
+
+.input2-value-label,
+.input3-value-label {
+    font-weight: bold;
+    color: #00796b;
+}
+
 
 label {
     font-weight: 500;
@@ -326,50 +455,39 @@ label {
 }
 
 .formula {
-    width: 300px;
-    height: 100px;
-    font-weight: normal;
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
     font-size: 16px;
+    font-weight: normal;
+    gap: 10px;
+    text-align: center;
 }
 
-.fomrulauno,
-.fomrulados,
-.fomrulautres {
-    font-weight: 100;
-
-
+.formula-part {
+    font-size: 18px;
 }
-.fomrulados{
-    width: 150px;
+
+.fraction {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
-}
-.fomrulauno {
-    font-size: 20px;
+    min-width: 120px;
 }
 
-.fomrmuladosline {
-    height: 1px;
-    margin: 2px;
-    background-color: #000000;
+.numerator,
+.denominator {
+    padding: 2px;
+}
+
+.fraction-line {
     width: 100%;
+    height: 1.5px;
+    background-color: #000;
+    margin: 2px 0;
 }
 
-.formuladostop {
-    height: 20px;
-    width: auto;
-    margin-top: 10px;
-}
-
-.formuladostop label {
-    z-index: 999;
-}
 
 .grafico-circular {
     width: 100px;
@@ -420,7 +538,6 @@ input[type="number"] {
 
 span {
     font-weight: bold;
-    margin-left: 10px;
 }
 
 .correct {
@@ -446,19 +563,57 @@ button:hover {
 }
 
 #calculoRapido {
-    background-color: #f7f3f3b0;
-    padding: 15px;
-    border: 1px solid #bcd4e6;
-    border-radius: 8px;
-    margin-bottom: 20px;
+    background: #f8f8f8;
+    padding: 30px;
+    border-radius: 15px;
+    margin: auto;
+    font-family: 'Segoe UI', sans-serif;
+    margin: 150px 0px;
+    width: 100vw;
 }
 
 #calculoRapido h2 {
     text-align: center;
-    width: 100%;
-    margin: 20px 0px;
-    font-weight: bold;
+    margin: 30px 0px !important;
+    color: #333;
 }
+
+#calculoRapido p {
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 25px;
+}
+
+.porcentaje-tips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.tip {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 15px 20px;
+    width: 320px;
+    text-align: center;
+    transition: transform 0.2s ease-in-out;
+}
+
+.tip:hover {
+    transform: scale(1.05);
+}
+
+.tip h3 {
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.tip p {
+    font-size: 15px;
+}
+
 
 .list-spacing {
     list-style-type: none;
@@ -470,6 +625,63 @@ button:hover {
     margin-bottom: 10px;
     font-size: 16px;
     line-height: 1.5;
+}
+
+#quizSection {
+    background-color: #f0f8ff;
+    padding: 30px;
+    border-radius: 15px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#quizSection h2 {
+    text-align: center;
+    color: #000000;
+    font-size: 35px;
+    width: 100%;
+
+}
+
+#quizSection p {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.quiz-table {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.quiz-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 10px 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    justify-items: center;
+}
+
+.quiz-header {
+    font-weight: bold;
+    background-color: #dff0ff;
+    color: #0e4d92;
+}
+
+.quiz-row input {
+    width: 80%;
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+.quiz-row span {
+    font-weight: bold;
+    color: #2e7d32;
 }
 
 
@@ -565,7 +777,7 @@ button:hover {
 }
 
 .ejercicioscontainer table th {
-    background-color: #03A61C;
+    background-color: #7eb9a4;
     color: #000000;
     font-weight: bold;
 }
@@ -675,7 +887,7 @@ button:hover {
 }
 
 .ejercicioscontainer2 table th {
-    background-color: #03a61b8a;
+    background-color: #7eb9a4;
     color: #000000;
     font-weight: bold;
 
@@ -724,6 +936,10 @@ button:hover {
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .encabezado h1 {
+        font-size: 25px;
+    }
+
     .main {
         width: 85vw;
     }
@@ -788,6 +1004,53 @@ button:hover {
         font-family: "Raleway", sans-serif;
         box-sizing: border-box;
         width: 100vw;
+    }
+
+    .tituloencabezado {
+        justify-content: flex-start !important;
+        font-size: 25px;
+        margin-top: 100px;
+        padding: 0px;
+        margin: 0px;
+    }
+
+    .encabezado p {
+        width: 95%;
+        margin: 0px;
+    }
+
+.quiz-row{
+    width: 100%;
+}
+#quizSection{
+    padding: 0px;
+}
+.quiz-table{
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+        align-items: center;
+}
+.quiz-row span{
+    font-size: 12px;
+}
+.tamañoinput3{
+    font-size: 12px;
+}
+    .calculograficotablacontent label {
+        font-size: 14px;
+    }
+.calculograficotablacontent{
+    flex-direction: column;
+}
+    .calculograficotablacontent input {
+        font-size: 14px;
+        width: 100px !important;
+    }
+
+    .encabezado h1 {
+        font-size: 30px;
+        font-weight: bold;
     }
 
     .main {
@@ -926,10 +1189,97 @@ button:hover {
         width: 100%;
     }
 }
-.footer{
+
+.footer {
     width: 100vw;
     height: 250px;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.centerUse {
+    text-align: center;
+}
+
+
+.percentage-card-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    padding: 0px 30%;
+
+}
+
+.percentage-card-header svg {
+    width: 28px;
+    height: 28px;
+    margin-right: 12px;
+    color: #000000;
+}
+
+.percentage-card-header h2 {
+    font-size: 26px;
+    font-weight: 700;
+    color: #000000;
+    margin: 0;
+}
+
+
+.chart-card {
+    max-width: 700px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #ffffff;
+    border-radius: 1.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: #333;
+}
+
+.chart-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 2rem;
+    justify-content: center;
+}
+
+#myPieChart {
+    width: 280px !important;
+    height: 280px !important;
+}
+
+.chart-data {
+    flex: 1;
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.data-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.1rem;
+    background: #f4f6f8;
+    padding: 0.8rem 1rem;
+    border-radius: 0.75rem;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.data-label {
+    color: #666;
+}
+
+.data-value {
+    font-weight: bold;
+    color: #111;
 }

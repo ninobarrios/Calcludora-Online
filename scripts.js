@@ -32,11 +32,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
         for (let i = 0; i < value; i++) {
             if (i < cells.length) {
-                cells[i].style.backgroundColor = '#F29F05';
+                cells[i].style.backgroundColor = '#ed826b';
             }
         }
 
-        percentageDisplay.textContent = `% de 100`;
+        percentageDisplay.textContent = ` de 100`;
     }
 
     function validarInput2() {
@@ -55,9 +55,9 @@ document.addEventListener('DOMContentLoaded', function () {
         const number = parseFloat(input3.value);
         if (!isNaN(percent) && !isNaN(number)) {
             const result = (percent / 100) * number;
-            resultado.value = result.toFixed(2); 
+            resultado.value = result.toFixed(2);
         } else {
-            resultado.value = ''; 
+            resultado.value = '';
         }
     }
 
@@ -93,62 +93,22 @@ document.addEventListener('DOMContentLoaded', function () {
     updateDiscountDetails();
 });
 document.addEventListener("DOMContentLoaded", function () {
-    const toggleButton = document.getElementById("toggle-button");
-    const toggleButton2 = document.getElementById("toggle-button2");
-    const toggleButton3 = document.getElementById("toggle-button3");
-    const toggleButton4 = document.getElementById("toggle-button4");
+    for (let i = 1; i <= 4; i++) {
+        const buttonId = `toggle-button${i === 1 ? '' : i}`;
+        const contentId = `extra-content${i === 1 ? '' : i}`;
 
-    const extraContent = document.getElementById("extra-content");
-    const extraContent2 = document.getElementById("extra-content2");
-    const extraContent3 = document.getElementById("extra-content3");
-    const extraContent4 = document.getElementById("extra-content4");
+        const toggleBtn = document.getElementById(buttonId);
+        const extraContent = document.getElementById(contentId);
 
-    toggleButton.addEventListener("click", function (event) {
-        event.preventDefault();
-        if (extraContent.style.display === "none") {
-            extraContent.style.display = "block";
-            extraContent.style.display = "flex";
-            toggleButton.textContent = "Ocultar Fórmula";
-        } else {
-            extraContent.style.display = "none";
-            toggleButton.textContent = "Ver Fórmula";
-        }
-    });
-    toggleButton2.addEventListener("click", function (event) {
-        event.preventDefault();
-        if (extraContent2.style.display === "none") {
-            extraContent2.style.display = "block";
-            extraContent2.style.display = "flex";
-            toggleButton2.textContent = "Ocultar Fórmula";
-        } else {
-            extraContent2.style.display = "none";
-            toggleButton2.textContent = "Ver Fórmula";
-        }
-    });
-    toggleButton3.addEventListener("click", function (event) {
-        event.preventDefault();
-        if (extraContent3.style.display === "none") {
-            extraContent3.style.display = "block";
-            extraContent3.style.display = "flex";
-            toggleButton3.textContent = "Ocultar Fórmula";
-        } else {
-            extraContent3.style.display = "none";
-            toggleButton3.textContent = "Ver Fórmula";
-        }
-    });
-    toggleButton4.addEventListener("click", function (event) {
-        event.preventDefault();
-        if (extraContent4.style.display === "none") {
-            extraContent4.style.display = "block";
-            extraContent4.style.display = "flex";
-            toggleButton4.textContent = "Ocultar Fórmula";
-        } else {
-            extraContent4.style.display = "none";
-            toggleButton4.textContent = "Ver Fórmula";
-        }
-    });
+        toggleBtn?.addEventListener("click", function (event) {
+            event.preventDefault();
+            const link = toggleBtn.querySelector('a');
+            const isHidden = extraContent.style.display === "none" || extraContent.style.display === "";
+            extraContent.style.display = isHidden ? "flex" : "none";
+            if (link) link.textContent = isHidden ? "Ocultar Fórmula" : "Ver Fórmula";
+        });
+    }
 });
-
 
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -168,11 +128,11 @@ document.addEventListener("DOMContentLoaded", function () {
         const number = parseFloat(input3.value) || 0;
         const result = (percentage / 100) * number;
 
-        updateLabels('.input2-value-label', `${percentage}`);  
-        updateLabels('.input3-value-label', `${number}`);        
-        updateLabels('.resultado-value-label', `${result.toFixed(2)}`); 
+        updateLabels('.input2-value-label', `${percentage}`);
+        updateLabels('.input3-value-label', `${number}`);
+        updateLabels('.resultado-value-label', `${result.toFixed(2)}`);
 
-        resultado.value = result.toFixed(2);  
+        resultado.value = result.toFixed(2);
     }
 
     input2.addEventListener("input", updateValues);
@@ -185,13 +145,16 @@ function obtenerNumero() {
     var porcentaje = document.getElementById("input2").value;
     var total = document.getElementById("input3").value;
 
-    porcentaje = parseFloat(porcentaje) || 0; 
-    total = parseFloat(total) || 0; 
+    porcentaje = parseFloat(porcentaje) || 0;
+    total = parseFloat(total) || 0;
 
     var resultado = (porcentaje / 100) * total;
 
-    document.getElementById("resultado").textContent = resultado.toFixed(2); 
+    document.getElementById("resultado").textContent = resultado.toFixed(2);
 }
+
+
+
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -202,29 +165,45 @@ document.addEventListener('DOMContentLoaded', () => {
     const ctx = document.getElementById('myPieChart').getContext('2d');
 
     let pieChart = new Chart(ctx, {
-        type: 'pie',
+        type: 'doughnut',
         data: {
-            labels: ['% Aplicado', 'Restante'],  
+            labels: ['Descuento Aplicado', 'Monto Restante'],
             datasets: [{
-                label: 'Valores',
-                data: [0, 0],  
-                backgroundColor: ['#fcae11', '#38c958'],
-                hoverOffset: 4
+                data: [0, 0],
+                backgroundColor: ['#ed826b', '#7eb9a4'], // Colores fijos
+                hoverOffset: 10,
+                borderWidth: 3,
+                borderColor: '#ffffff',
+                hoverBorderColor: '#222',
+                hoverBorderWidth: 2
             }]
         },
         options: {
             responsive: true,
+            cutout: '60%',
+            animation: {
+                animateRotate: true,
+                duration: 1500,
+                easing: 'easeOutQuart'
+            },
             plugins: {
                 legend: {
-                    position: 'top',
+                    position: 'bottom',
+                    labels: {
+                        color: '#333',
+                        font: {
+                            size: 14,
+                            family: 'Segoe UI'
+                        }
+                    }
                 },
                 tooltip: {
                     callbacks: {
                         label: function (tooltipItem) {
-                            let total = pieChart.data.datasets[0].data.reduce((a, b) => a + b, 0);
-                            let value = tooltipItem.raw;
-                            let percentage = ((value / total) * 100).toFixed(2);
-                            return `${tooltipItem.label}: ${value} (${percentage}%)`;  
+                            const total = pieChart.data.datasets[0].data.reduce((a, b) => a + b, 0);
+                            const value = tooltipItem.raw;
+                            const percentage = total > 0 ? ((value / total) * 100).toFixed(2) : 0;
+                            return `${tooltipItem.label}: S/ ${value.toFixed(2)} (${percentage}%)`;
                         }
                     }
                 }
@@ -239,11 +218,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const descuentoAplicado = (porcentaje / 100) * precio;
         const restante = precio - descuentoAplicado;
 
-        input2ValueLabel.textContent = `${porcentaje}%`;
-        input3ValueLabel.textContent = `${precio}`;
+        input2ValueLabel.textContent = `${porcentaje.toFixed(2)}%`;
+        input3ValueLabel.textContent = `${precio.toFixed(2)}`;
 
         pieChart.data.datasets[0].data = [descuentoAplicado, restante];
-        
         pieChart.update();
     };
 
@@ -252,10 +230,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     updateChart();
 });
-
-
-
-
 
 
 
@@ -277,16 +251,18 @@ document.addEventListener('DOMContentLoaded', function () {
     const ctx = document.getElementById('myPieChart2').getContext('2d');
 
     const myPieChart2 = new Chart(ctx, {
-        type: 'pie',
+        type: 'doughnut', // Cambiado de 'pie' a 'doughnut'
         data: {
+            labels: ['% Aplicado', 'Restante'],
             datasets: [{
-                data: [0, 100], 
-                backgroundColor: ['#fcae11', '#38c958'],
+                data: [0, 100],
+                backgroundColor: ['#ed826b', '#7eb9a4'], // Colores personalizados
                 borderWidth: 1
             }]
         },
         options: {
             responsive: true,
+            cutout: '60%', 
             plugins: {
                 legend: {
                     position: 'top',
@@ -297,8 +273,8 @@ document.addEventListener('DOMContentLoaded', function () {
                             const dataset = tooltipItem.dataset;
                             const total = dataset.data.reduce((sum, value) => sum + value, 0);
                             const value = dataset.data[tooltipItem.dataIndex];
-                            const percentage = ((value / total) * 100).toFixed(2);
-                            return `${tooltipItem.label}`;
+                            const percentage = total > 0 ? ((value / total) * 100).toFixed(2) : 0;
+                            return `${tooltipItem.label}: ${percentage}%`;
                         }
                     }
                 }
@@ -330,11 +306,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
             const partePorcentaje = (parte * 100) / resultadototal;
             const restante = 100 - partePorcentaje;
-            myPieChart2.data.datasets[0].data = [partePorcentaje, restante];
 
+            myPieChart2.data.datasets[0].data = [partePorcentaje, restante];
             myPieChart2.data.labels = [
-                `% Aplicado: (${partePorcentaje.toFixed(2)}%) ${parte.toFixed(2)} `,
-                `Restante: (${restante.toFixed(2)}%) ${(resultadototal - parte).toFixed(2)} `
+                `% Aplicado: (${partePorcentaje.toFixed(2)}%) ${parte.toFixed(2)}`,
+                `Restante: (${restante.toFixed(2)}%) ${(resultadototal - parte).toFixed(2)}`
             ];
 
             myPieChart2.update();
@@ -353,6 +329,7 @@ document.addEventListener('DOMContentLoaded', function () {
             });
 
             myPieChart2.data.datasets[0].data = [0, 100];
+            myPieChart2.data.labels = ['% Aplicado', 'Restante'];
             myPieChart2.update();
         }
     }
@@ -368,13 +345,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-
-
-
-
 document.addEventListener('DOMContentLoaded', function () {
-    const porcentajebox3 = document.getElementById('porcentajebox3');
-    const parteporcentajebox3 = document.getElementById('parteporcentajebox3');
+    const porcentajebox3 = document.getElementById('porcentajebox3'); // Total
+    const parteporcentajebox3 = document.getElementById('parteporcentajebox3'); // Parte del total
     const resultadototalbox3 = document.getElementById('resultadototalbox3');
 
     const labelPorcentajebox3 = document.getElementById('labelPorcentajebox3');
@@ -387,24 +360,20 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const ctx = document.getElementById('myPieChart3').getContext('2d');
 
-    function getLabelValue(labelElement) {
-        const value = parseFloat(labelElement.textContent);
-        return isNaN(value) ? 0 : value;
-    }
-
     const myPieChart3 = new Chart(ctx, {
-        type: 'pie',
+        type: 'doughnut',
         data: {
-            labels: ['Restante', 'Parte'], 
+            labels: ['Restante', 'Parte'],
             datasets: [{
                 label: 'Distribución',
-                data: [0, 100], 
-                backgroundColor: ['#fcae11', '#38c958'],
+                data: [0, 100],
+                backgroundColor: ['#ed826b', '#7eb9a4'],
                 borderWidth: 1
             }]
         },
         options: {
             responsive: true,
+            cutout: '60%',
             plugins: {
                 legend: {
                     position: 'top',
@@ -412,16 +381,16 @@ document.addEventListener('DOMContentLoaded', function () {
                         generateLabels: function (chart) {
                             const dataset = chart.data.datasets[0];
                             const total = dataset.data.reduce((sum, value) => sum + value, 0);
-
-                            return dataset.data.map((data, index) => {
-                                const percentage = ((data / total) * 100).toFixed(2);
+                            return chart.data.labels.map((label, i) => {
+                                const value = dataset.data[i];
+                                const percentage = total > 0 ? ((value / total) * 100).toFixed(2) : 0;
                                 return {
-                                    text: `${percentage}%`, 
-                                    fillStyle: dataset.backgroundColor[index],
-                                    strokeStyle: dataset.borderColor ? dataset.borderColor[index] : dataset.backgroundColor[index],
-                                    lineWidth: dataset.borderWidth,
-                                    hidden: isNaN(dataset.data[index]) || chart.getDatasetMeta(0).data[index].hidden,
-                                    index: index
+                                    text: `${label} ${percentage}%`,
+                                    fillStyle: dataset.backgroundColor[i],
+                                    strokeStyle: dataset.backgroundColor[i],
+                                    lineWidth: 1,
+                                    hidden: false,
+                                    index: i
                                 };
                             });
                         }
@@ -432,8 +401,8 @@ document.addEventListener('DOMContentLoaded', function () {
                         label: function (tooltipItem) {
                             let total = myPieChart3.data.datasets[0].data.reduce((a, b) => a + b, 0);
                             let value = tooltipItem.raw;
-                            let percentage = ((value / total) * 100).toFixed(2);
-                            return `${tooltipItem.label}: (${percentage}%) ${value.toFixed(2)} `;  
+                            let percentage = total > 0 ? ((value / total) * 100).toFixed(2) : 0;
+                            return `${tooltipItem.label}: ${value.toFixed(2)} (${percentage}%)`;
                         }
                     }
                 }
@@ -442,45 +411,41 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     function calcularResultado() {
-        const porcentaje = parseFloat(porcentajebox3.value);
-        const parte = parseFloat(parteporcentajebox3.value);
+        const total = parseFloat(porcentajebox3.value); 
+        const parte = parseFloat(parteporcentajebox3.value); 
 
-        if (!isNaN(porcentaje) && !isNaN(parte) && porcentaje > 0) {
-            const resultadototal = (parte * 100) / porcentaje;
-            resultadototalbox3.value = resultadototal.toFixed(2);
-            labelResultadototalbox3.textContent = resultadototal.toFixed(2);
+        if (!isNaN(total) && !isNaN(parte) && total > 0 && parte >= 0) {
+            const porcentajeParte = (parte / total) * 100;
+            const restante = total - parte;
 
-            labelPorcentajebox3.textContent = porcentaje;
+            // Actualizar campos visibles
+            resultadototalbox3.value = porcentajeParte.toFixed(2) + ' %';
+            labelResultadototalbox3.textContent = porcentajeParte.toFixed(2);
+
+            labelPorcentajebox3.textContent = total;
             labelParteporcentajebox3.textContent = parte;
 
-            inputValueLabels3.forEach(label => {
-                label.textContent = parte;
-            });
-            inputPercentageLabels3.forEach(label => {
-                label.textContent = porcentaje;
-            });
-            input3ValueLabels3.forEach(label => {
-                label.textContent = resultadototal.toFixed(2);
-            });
+            inputValueLabels3.forEach(label => { label.textContent = parte; });
+            inputPercentageLabels3.forEach(label => { label.textContent = porcentajeParte.toFixed(2)+"%"; });
+            input3ValueLabels3.forEach(label => { label.textContent = total; });
 
-            const partePorcentaje = (parte * 100) / porcentaje;
-            myPieChart3.data.datasets[0].data = [porcentaje - parte, parte];
+            // Actualizar gráfico
+            myPieChart3.data.datasets[0].data = [restante, parte];
+            myPieChart3.data.labels = [
+                ``,
+                ``
+            ];
             myPieChart3.update();
         } else {
             resultadototalbox3.value = 'Error';
             labelResultadototalbox3.textContent = 'Error';
 
-            inputValueLabels3.forEach(label => {
-                label.textContent = '';
-            });
-            inputPercentageLabels3.forEach(label => {
-                label.textContent = '';
-            });
-            input3ValueLabels3.forEach(label => {
-                label.textContent = '';
-            });
+            inputValueLabels3.forEach(label => { label.textContent = ''; });
+            inputPercentageLabels3.forEach(label => { label.textContent = ''; });
+            input3ValueLabels3.forEach(label => { label.textContent = ''; });
 
             myPieChart3.data.datasets[0].data = [0, 100];
+            myPieChart3.data.labels = ['Restante', 'Parte'];
             myPieChart3.update();
         }
     }
@@ -489,6 +454,7 @@ document.addEventListener('DOMContentLoaded', function () {
     porcentajebox3.addEventListener('input', calcularResultado);
     parteporcentajebox3.addEventListener('input', calcularResultado);
 });
+
 
 
 
@@ -504,7 +470,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const labelPorcentajebox4 = document.getElementById('labelPorcentajebox4');
     const labelParteporcentajebox4 = document.getElementById('labelParteporcentajebox4');
     const labelResultadototalbox4 = document.getElementById('labelResultadototalbox4');
-    const partePorcentajeLabel = document.getElementById('partePorcentajeLabel'); 
+    const partePorcentajeLabel = document.getElementById('partePorcentajeLabel');
 
     const inputValueLabels4 = document.querySelectorAll('.input2-value-label4');
     const inputPercentageLabels4 = document.querySelectorAll('.input2-percentage-label4');
@@ -513,24 +479,23 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const ctx = document.getElementById('myPieChart4').getContext('2d');
 
-    let resultadototal = 0; 
-
     const myPieChart4 = new Chart(ctx, {
-        type: 'pie',
+        type: 'doughnut',
         data: {
-            labels: ['Porcentaje', ' % Restante'],  
+            labels: ['Parte Calculada', 'Restante'],
             datasets: [{
                 label: 'Distribución',
-                data: [0, 100], 
-                backgroundColor: ['#fcae11', '#38c958'],
+                data: [0, 100],
+                backgroundColor: ['#ed826b', '#7eb9a4'],
                 borderWidth: 1
             }]
         },
         options: {
             responsive: true,
+            cutout: '60%', // hace la dona
             plugins: {
                 legend: {
-                    position: 'top', 
+                    position: 'top',
                     labels: {
                         font: {
                             size: 14
@@ -540,11 +505,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 tooltip: {
                     callbacks: {
                         label: function (tooltipItem) {
-                            const value = tooltipItem.raw; 
-                            const total = myPieChart4.data.datasets[0].data.reduce((a, b) => a + b, 0); 
-                            const percentage = (value / total * 100).toFixed(2); 
-
-                            return `${tooltipItem.label}: (${percentage}%)`;
+                            const value = tooltipItem.raw;
+                            const total = myPieChart4.data.datasets[0].data.reduce((a, b) => a + b, 0);
+                            const percentage = (value / total * 100).toFixed(2);
+                            return `${tooltipItem.label}: (${percentage}%) ${value.toFixed(2)}`;
                         }
                     }
                 }
@@ -571,7 +535,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const parteExtra = parseFloat(parteporcentajebox42.value);
 
         if (!isNaN(porcentaje) && !isNaN(parte) && !isNaN(parteExtra) && porcentaje > 0) {
-            resultadototal = (parte * parteExtra) / porcentaje; 
+            const resultadototal = (parte * parteExtra) / porcentaje;
             resultadototalbox4.value = resultadototal.toFixed(2);
             labelResultadototalbox4.textContent = resultadototal.toFixed(2);
 
@@ -581,14 +545,20 @@ document.addEventListener('DOMContentLoaded', function () {
             inputValueLabels4.forEach(label => label.textContent = parte);
             inputPercentageLabels4.forEach(label => label.textContent = porcentaje);
             input3ValueLabels4.forEach(label => label.textContent = resultadototal.toFixed(2));
-            partePorcentajeLabels42.forEach(label => label.textContent = parteExtra); 
+            partePorcentajeLabels42.forEach(label => label.textContent = parteExtra);
 
-            const total = (parte * 100) / porcentaje;
-            const parteExtraPorcentaje = (parte * parteExtra) / porcentaje;
-            myPieChart4.data.datasets[0].data = [parteExtra, 100-parteExtra];
+            // Calcular el porcentaje real que representa la parteExtra
+            const porcentajeCalculado = (parteExtra * 100) / 100; // ya es porcentaje directo
+            const restante = 100 - parteExtra;
+
+            myPieChart4.data.datasets[0].data = [parteExtra, restante];
+            myPieChart4.data.labels = [
+                `${parteExtra.toFixed(2)}%`,
+                `${restante.toFixed(2)}%`
+            ];
             myPieChart4.update();
 
-            partePorcentajeLabel.textContent = `Total: ${total.toFixed(2)} / Porcentaje: ${parteExtra.toFixed(2)}% / Resultado: ${parteExtraPorcentaje.toFixed(2)}`;
+            partePorcentajeLabel.textContent = `Porcentaje extra: ${parteExtra.toFixed(2)}% / Resultado: ${resultadototal.toFixed(2)}`;
         } else {
             manejarError();
         }
@@ -606,34 +576,88 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
+const porcentajes = [10, 15, 20, 25, 50, 75];
+const preguntas = [];
 
+function generarPreguntas() {
+    const quizContainer = document.getElementById("quizContainer");
 
+    for (let i = 0; i < 8; i++) {
+        const porcentaje = porcentajes[Math.floor(Math.random() * porcentajes.length)];
+        const base = Math.floor(Math.random() * 901) + 100; // de 100 a 1000
+        const resultado = parseFloat(((porcentaje / 100) * base).toFixed(2));
 
+        preguntas.push({ id: `q${i + 1}`, porcentaje, base, resultado });
 
-
+        const letra = String.fromCharCode(97 + i); // a, b, c...
+        const fila = document.createElement("div");
+        fila.className = "quiz-row";
+        fila.innerHTML = `
+        <div class="tamañoinput3">${letra}) ${porcentaje}% de ${base}</div>
+        <input type="number" step="any" id="q${i + 1}">
+        <span id="result${i + 1}">-</span>
+      `;
+        quizContainer.appendChild(fila);
+    }
+}
 
 function checkAnswers() {
-    const correctAnswers = {
-        q1: 30,   // 50% de 60
-        q2: 12,   // 50% de 24
-        q3: 210,  // 25% de 840
-        q4: 500,  // 25% de 2000
-        q5: 300,  // 75% de 400
-        q6: 15,   // 75% de 20
-        q7: 9,    // 10% de 90
-        q8: 100   // 20% de 500
-    };
+    preguntas.forEach((pregunta, i) => {
+        const input = document.getElementById(pregunta.id);
+        const resultSpan = document.getElementById(`result${i + 1}`);
+        const userAnswer = parseFloat(input.value);
 
-    for (let i = 1; i <= 8; i++) {
-        const userAnswer = parseInt(document.getElementById(`q${i}`).value);
-        const resultSpan = document.getElementById(`result${i}`);
-
-        if (userAnswer === correctAnswers[`q${i}`]) {
-            resultSpan.textContent = "Correcto";
-            resultSpan.className = "correct";
+        if (!isNaN(userAnswer)) {
+            if (Math.abs(userAnswer - pregunta.resultado) < 0.01) {
+                resultSpan.textContent = `✅ ${pregunta.resultado}`;
+                resultSpan.style.color = "#2e7d32"; // verde
+            } else {
+                resultSpan.textContent = `❌ ${userAnswer} (✔ ${pregunta.resultado})`;
+                resultSpan.style.color = "#d32f2f"; // rojo
+            }
         } else {
-            resultSpan.textContent = "Incorrecto";
-            resultSpan.className = "incorrect";
+            resultSpan.textContent = "-";
+            resultSpan.style.color = "inherit";
         }
-    }
+    });
+}
+
+generarPreguntas();
+
+const ids = [
+    "input1",
+    "input2",
+    "porcentajebox2",
+    "porcentajebox4",
+    "parteporcentajebox42"
+];
+
+ids.forEach(id => {
+    const input = document.getElementById(id);
+
+    if (!input) return;
+
+    // Quitar el % al enfocar
+    input.addEventListener("focus", () => {
+        input.value = input.value.replace('%', '');
+    });
+
+    // Mientras se escribe, mantener solo números y agregar %
+    input.addEventListener("input", () => {
+        let val = input.value.replace(/[^0-9]/g, '');
+        input.value = val ? val + '%' : '';
+    });
+
+    // Al salir, asegurarse que tenga el %
+    input.addEventListener("blur", () => {
+        if (input.value !== '' && !input.value.includes('%')) {
+            input.value += '%';
+        }
+    });
+});
+
+// Función para obtener el número sin el %
+function getPorcentajeSinSimbolo(id) {
+    const val = document.getElementById(id)?.value || '';
+    return parseFloat(val.replace('%', '')) || 0;
 }
