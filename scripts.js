@@ -575,7 +575,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-
+/*----------------------------------------------*/
 const porcentajes = [10, 15, 20, 25, 50, 75];
 const preguntas = [];
 
@@ -589,15 +589,15 @@ function generarPreguntas() {
 
         preguntas.push({ id: `q${i + 1}`, porcentaje, base, resultado });
 
-        const letra = String.fromCharCode(97 + i); // a, b, c...
-        const fila = document.createElement("div");
-        fila.className = "quiz-row";
-        fila.innerHTML = `
-        <div class="tamañoinput3">${letra}) ${porcentaje}% de ${base}</div>
-        <input type="number" step="any" id="q${i + 1}">
-        <span id="result${i + 1}">-</span>
-      `;
-        quizContainer.appendChild(fila);
+
+        const card = document.createElement("div");
+        card.className = "quiz-card";
+        card.innerHTML = `
+            <h4> ¿Cuál es el ${porcentaje}% de ${base}?</h4>
+            <input type="number" step="any" id="q${i + 1}"  placeholder="Tu respuesta">
+            <span id="result${i + 1}">⏳</span>
+        `;
+        quizContainer.appendChild(card);
     }
 }
 
@@ -623,6 +623,8 @@ function checkAnswers() {
 }
 
 generarPreguntas();
+
+/*----------------------------------------------*/
 
 const ids = [
     "input1",
