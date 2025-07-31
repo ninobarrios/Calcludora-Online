@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
 
-        percentageDisplay.textContent = ` de 100`;
+        percentageDisplay.textContent = ` of 100`;
     }
 
     function validarInput2() {
@@ -105,7 +105,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const link = toggleBtn.querySelector('a');
             const isHidden = extraContent.style.display === "none" || extraContent.style.display === "";
             extraContent.style.display = isHidden ? "flex" : "none";
-            if (link) link.textContent = isHidden ? "Ocultar Fórmula" : "Ver Fórmula";
+            if (link) link.textContent = isHidden ? "Hide Formula" : "Show Formula";
         });
     }
 });
@@ -167,10 +167,10 @@ document.addEventListener('DOMContentLoaded', () => {
     let pieChart = new Chart(ctx, {
         type: 'doughnut',
         data: {
-            labels: ['Descuento Aplicado', 'Monto Restante'],
+            labels: ['Percentage', 'Remaining'],
             datasets: [{
                 data: [0, 0],
-                backgroundColor: ['#ed826b', '#7eb9a4'], // Colores fijos
+                backgroundColor: ['#ed826b', '#7eb9a4'],
                 hoverOffset: 10,
                 borderWidth: 3,
                 borderColor: '#ffffff',
@@ -253,7 +253,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const myPieChart2 = new Chart(ctx, {
         type: 'doughnut', // Cambiado de 'pie' a 'doughnut'
         data: {
-            labels: ['% Aplicado', 'Restante'],
+            labels: ['% Applied', 'Remaining'],
             datasets: [{
                 data: [0, 100],
                 backgroundColor: ['#ed826b', '#7eb9a4'], // Colores personalizados
@@ -262,7 +262,7 @@ document.addEventListener('DOMContentLoaded', function () {
         },
         options: {
             responsive: true,
-            cutout: '60%', 
+            cutout: '60%',
             plugins: {
                 legend: {
                     position: 'top',
@@ -309,9 +309,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
             myPieChart2.data.datasets[0].data = [partePorcentaje, restante];
             myPieChart2.data.labels = [
-                `% Aplicado: (${partePorcentaje.toFixed(2)}%) ${parte.toFixed(2)}`,
-                `Restante: (${restante.toFixed(2)}%) ${(resultadototal - parte).toFixed(2)}`
+                `% Applied: (${partePorcentaje.toFixed(2)}%) ${parte.toFixed(2)}`,
+                `Remaining: (${restante.toFixed(2)}%) ${(resultadototal - parte).toFixed(2)}`
             ];
+
 
             myPieChart2.update();
         } else {
@@ -329,7 +330,7 @@ document.addEventListener('DOMContentLoaded', function () {
             });
 
             myPieChart2.data.datasets[0].data = [0, 100];
-            myPieChart2.data.labels = ['% Aplicado', 'Restante'];
+            myPieChart2.data.labels = ['% Applied', 'Remaining'];
             myPieChart2.update();
         }
     }
@@ -363,14 +364,15 @@ document.addEventListener('DOMContentLoaded', function () {
     const myPieChart3 = new Chart(ctx, {
         type: 'doughnut',
         data: {
-            labels: ['Restante', 'Parte'],
+            labels: ['Remaining', 'Portion'],
             datasets: [{
-                label: 'Distribución',
+                label: 'Distribution',
                 data: [0, 100],
                 backgroundColor: ['#ed826b', '#7eb9a4'],
                 borderWidth: 1
             }]
         },
+
         options: {
             responsive: true,
             cutout: '60%',
@@ -411,8 +413,8 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     function calcularResultado() {
-        const total = parseFloat(porcentajebox3.value); 
-        const parte = parseFloat(parteporcentajebox3.value); 
+        const total = parseFloat(porcentajebox3.value);
+        const parte = parseFloat(parteporcentajebox3.value);
 
         if (!isNaN(total) && !isNaN(parte) && total > 0 && parte >= 0) {
             const porcentajeParte = (parte / total) * 100;
@@ -426,7 +428,7 @@ document.addEventListener('DOMContentLoaded', function () {
             labelParteporcentajebox3.textContent = parte;
 
             inputValueLabels3.forEach(label => { label.textContent = parte; });
-            inputPercentageLabels3.forEach(label => { label.textContent = porcentajeParte.toFixed(2)+"%"; });
+            inputPercentageLabels3.forEach(label => { label.textContent = porcentajeParte.toFixed(2) + "%"; });
             input3ValueLabels3.forEach(label => { label.textContent = total; });
 
             // Actualizar gráfico
@@ -558,7 +560,7 @@ document.addEventListener('DOMContentLoaded', function () {
             ];
             myPieChart4.update();
 
-            partePorcentajeLabel.textContent = `Porcentaje extra: ${parteExtra.toFixed(2)}% / Resultado: ${resultadototal.toFixed(2)}`;
+partePorcentajeLabel.textContent = `Extra percentage: ${parteExtra.toFixed(2)}% / Result: ${resultadototal.toFixed(2)}`;
         } else {
             manejarError();
         }
@@ -593,10 +595,11 @@ function generarPreguntas() {
         const card = document.createElement("div");
         card.className = "quiz-card";
         card.innerHTML = `
-            <h4> ¿Cuál es el ${porcentaje}% de ${base}?</h4>
-            <input type="number" step="any" id="q${i + 1}"  placeholder="Tu respuesta">
-            <span id="result${i + 1}">⏳</span>
-        `;
+    <h4> What is ${porcentaje}% of ${base}?</h4>
+    <input type="number" step="any" id="q${i + 1}" placeholder="Your answer">
+    <span id="result${i + 1}">⏳</span>
+`;
+
         quizContainer.appendChild(card);
     }
 }
