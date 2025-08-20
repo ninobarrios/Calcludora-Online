@@ -87,9 +87,11 @@ body {
     height: 70vh;
 
 }
-.grafico p{
+
+.grafico p {
     width: 70vw;
 }
+
 .grafico h2 {
     text-align: center;
     font-family: "Jost", sans-serif;
@@ -641,101 +643,101 @@ button:hover {
 
 /**/
 #quizSection {
-  background: linear-gradient(135deg, #f0f8ff, #e6f7ff);
-  padding: 40px;
-  border-radius: 20px;
-  max-width: 1100px;
-  margin: 30px auto;
-  font-family: 'Segoe UI', sans-serif;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(135deg, #f0f8ff, #e6f7ff);
+    padding: 40px;
+    border-radius: 20px;
+    max-width: 1100px;
+    margin: 30px auto;
+    font-family: 'Segoe UI', sans-serif;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 #quizSection h2 {
-  text-align: center;
-  color: #003366;
-  font-size: 32px;
-  margin-bottom: 10px;
+    text-align: center;
+    color: #003366;
+    font-size: 32px;
+    margin-bottom: 10px;
 }
 
 #quizSection p {
-  text-align: center;
-  margin-bottom: 25px;
-  font-size: 16px;
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 16px;
 }
 
 .quiz-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 20px;
-  margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
 }
 
 .quiz-card {
-  background: #ffffff;
-  border-radius: 15px;
-  padding: 20px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-justify-content: center;
-text-align: center;
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    justify-content: center;
+    text-align: center;
 }
 
 
 .quiz-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.08);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 18px rgba(0, 0, 0, 0.08);
 }
 
 .quiz-card h4 {
-  font-size: 18px;
-  color: #003366;
-  margin-bottom: 12px;
+    font-size: 18px;
+    color: #003366;
+    margin-bottom: 12px;
 }
 
 .quiz-card input {
-  padding: 10px;
-  font-size: 15px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  margin-bottom: 10px;
-  transition: border 0.3s ease;
-  width: 90%;
-  text-align: center;
+    padding: 10px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    transition: border 0.3s ease;
+    width: 90%;
+    text-align: center;
 }
 
 .quiz-card input:focus {
-  border-color: #3399ff;
-  outline: none;
+    border-color: #3399ff;
+    outline: none;
 }
 
 .quiz-card span {
-  font-weight: bold;
-  font-size: 14px;
-  text-align: center;
-  color: #888;
+    font-weight: bold;
+    font-size: 14px;
+    text-align: center;
+    color: #888;
 }
 
 .quiz-actions {
-  text-align: center;
-  margin-top: 30px;
+    text-align: center;
+    margin-top: 30px;
 }
 
 .showmorebtn {
-  background-color: #3399ff;
-  color: white;
-  border: none;
-  padding: 12px 25px;
-  font-size: 16px;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+    background-color: #3399ff;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 .showmorebtn:hover {
-  background-color: #007acc;
+    background-color: #007acc;
 }
 
 
@@ -781,7 +783,15 @@ text-align: center;
 }
 
 
+.table-container {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
 
+table {
+    width: 100%; /* Asegura que la tabla ocupe todo el ancho disponible */
+    border-collapse: collapse; /* Evita bordes dobles */
+}
 
 
 
@@ -1017,6 +1027,8 @@ text-align: center;
         width: 85vw;
     }
 
+
+
     .calculadoracontenedor {
         width: 80%;
         font-size: 12px !important;
@@ -1078,44 +1090,67 @@ text-align: center;
         box-sizing: border-box;
         width: 100vw;
     }
-
+.percentage-card-header{
+    padding: 0px !important;
+}
     .tituloencabezado {
-        justify-content: flex-start !important;
         font-size: 25px;
         margin-top: 100px;
         padding: 0px;
         margin: 0px;
-    }
-
-    .encabezado p {
-        width: 95%;
-        margin: 0px;
-    }
-
-.quiz-row{
-    width: 100%;
-}
-#quizSection{
-    padding: 0px;
-}
-.quiz-table{
-    margin: 0px;
-    padding: 0px;
-    width: 100%;
+        display: flex;
         align-items: center;
+        justify-content: center;
+    }
+    .usosinterno{
+        width: 90vw;
+        padding: 0 5vw;
+    }
+    .usosinterno h2 {
+        width: 100% !important;
+
+    }
+    .encabezado p {
+        width: 90%;
+        margin: 0px;
+        font-size: 12px;
+
+    }
+.main h2{
+    text-align: center;
+    width: 100%;
 }
-.quiz-row span{
-    font-size: 12px;
-}
-.tamañoinput3{
-    font-size: 12px;
-}
+    .quiz-row {
+        width: 100%;
+    }
+
+    #quizSection {
+        padding: 0px;
+    }
+
+    .quiz-table {
+        margin: 0px;
+        padding: 0px;
+        width: 100%;
+        align-items: center;
+    }
+
+    .quiz-row span {
+        font-size: 12px;
+    }
+
+    .tamañoinput3 {
+        font-size: 12px;
+    }
+
     .calculograficotablacontent label {
         font-size: 14px;
     }
-.calculograficotablacontent{
-    flex-direction: column;
-}
+
+    .calculograficotablacontent {
+        flex-direction: column;
+    }
+
     .calculograficotablacontent input {
         font-size: 14px;
         width: 100px !important;
@@ -1223,8 +1258,8 @@ text-align: center;
     }
 
     .ejercicioscontainer2 {
-        width: 95%;
-        box-sizing: border-box;
+        width: 70%;
+                box-sizing: border-box;
         margin: 10px 0px;
         padding: 25px;
     }
@@ -1358,7 +1393,7 @@ text-align: center;
 }
 
 
-.exercises{
+.exercises {
     display: flex;
     justify-content: center;
     flex-direction: column;
