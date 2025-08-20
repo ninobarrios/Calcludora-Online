@@ -240,23 +240,29 @@ document.addEventListener('DOMContentLoaded', function () {
     const parteporcentajebox2 = document.getElementById('parteporcentajebox2');
     const resultadototalbox2 = document.getElementById('resultadototalbox2');
 
-    const labelPorcentajebox2 = document.getElementById('labelPorcentajebox2');
-    const labelParteporcentajebox2 = document.getElementById('labelParteporcentajebox2');
-    const labelResultadototalbox2 = document.getElementById('labelResultadototalbox2');
+    // Se eliminan estas líneas ya que los labels no existen o son usados para otra cosa
+    // const labelPorcentajebox2 = document.getElementById('labelPorcentajebox2');
+    // const labelParteporcentajebox2 = document.getElementById('labelParteporcentajebox2');
+    // const labelResultadototalbox2 = document.getElementById('labelResultadototalbox2');
 
-    const inputValueLabels = document.querySelectorAll('.input2-value-label2');
-    const inputPercentageLabels = document.querySelectorAll('.input2-percentage-label');
-    const input3ValueLabels = document.querySelectorAll('.input3-value-label2');
+    // Se obtienen los nuevos elementos con ID para mayor precisión
+    const input2ValueTable = document.getElementById('input2-value-label2');
+    const input2PercentageTable = document.getElementById('input2-percentage-label');
+    const input2ValueFormula = document.getElementById('input2-value-label-formula');
+    const input2PercentageFormula = document.getElementById('input2-percentage-label-formula');
+    const input3ValueFormula = document.getElementById('input3-value-label2-formula');
+    const input3ValueChart = document.getElementById('input3-value-label2-chart');
+    const input2PercentageChart = document.getElementById('input2-percentage-label-chart');
 
     const ctx = document.getElementById('myPieChart2').getContext('2d');
 
     const myPieChart2 = new Chart(ctx, {
-        type: 'doughnut', // Cambiado de 'pie' a 'doughnut'
+        type: 'doughnut',
         data: {
             labels: ['% Applied', 'Remaining'],
             datasets: [{
                 data: [0, 100],
-                backgroundColor: ['#ed826b', '#7eb9a4'], // Colores personalizados
+                backgroundColor: ['#ed826b', '#7eb9a4'],
                 borderWidth: 1
             }]
         },
@@ -289,45 +295,38 @@ document.addEventListener('DOMContentLoaded', function () {
         if (porcentaje > 0 && parte > 0) {
             const resultadototal = (parte * 100) / porcentaje;
             resultadototalbox2.value = resultadototal.toFixed(2);
-            labelResultadototalbox2.textContent = resultadototal.toFixed(2);
 
-            labelPorcentajebox2.textContent = porcentaje;
-            labelParteporcentajebox2.textContent = parte;
+            // Actualización de los elementos con ID
+            if (input2ValueTable) input2ValueTable.textContent = parte;
+            if (input2PercentageTable) input2PercentageTable.textContent = porcentaje;
+            if (input2ValueFormula) input2ValueFormula.textContent = parte;
+            if (input2PercentageFormula) input2PercentageFormula.textContent = porcentaje;
+            if (input3ValueFormula) input3ValueFormula.textContent = resultadototal.toFixed(2);
+            if (input3ValueChart) input3ValueChart.textContent = resultadototal.toFixed(2);
+            if (input2PercentageChart) input2PercentageChart.textContent = porcentaje;
 
-            inputValueLabels.forEach(label => {
-                label.textContent = parte;
-            });
-            inputPercentageLabels.forEach(label => {
-                label.textContent = porcentaje;
-            });
-            input3ValueLabels.forEach(label => {
-                label.textContent = resultadototal.toFixed(2);
-            });
-
+            // Resto del código del gráfico
             const partePorcentaje = (parte * 100) / resultadototal;
             const restante = 100 - partePorcentaje;
 
             myPieChart2.data.datasets[0].data = [partePorcentaje, restante];
             myPieChart2.data.labels = [
-                `% Applied: (${partePorcentaje.toFixed(2)}%) ${parte.toFixed(2)}`,
+                `% Applied: (${partePorcentaje.toFixed(2)}%) ${parte}`,
                 `Remaining: (${restante.toFixed(2)}%) ${(resultadototal - parte).toFixed(2)}`
             ];
-
 
             myPieChart2.update();
         } else {
             resultadototalbox2.value = 'Error';
-            labelResultadototalbox2.textContent = 'Error';
 
-            inputValueLabels.forEach(label => {
-                label.textContent = '';
-            });
-            inputPercentageLabels.forEach(label => {
-                label.textContent = '';
-            });
-            input3ValueLabels.forEach(label => {
-                label.textContent = '';
-            });
+            // Limpieza de los elementos con ID
+            if (input2ValueTable) input2ValueTable.textContent = '';
+            if (input2PercentageTable) input2PercentageTable.textContent = '';
+            if (input2ValueFormula) input2ValueFormula.textContent = '';
+            if (input2PercentageFormula) input2PercentageFormula.textContent = '';
+            if (input3ValueFormula) input3ValueFormula.textContent = '';
+            if (input3ValueChart) input3ValueChart.textContent = '';
+            if (input2PercentageChart) input2PercentageChart.textContent = '';
 
             myPieChart2.data.datasets[0].data = [0, 100];
             myPieChart2.data.labels = ['% Applied', 'Remaining'];
@@ -345,19 +344,24 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-
 document.addEventListener('DOMContentLoaded', function () {
     const porcentajebox3 = document.getElementById('porcentajebox3'); // Total
     const parteporcentajebox3 = document.getElementById('parteporcentajebox3'); // Parte del total
     const resultadototalbox3 = document.getElementById('resultadototalbox3');
 
-    const labelPorcentajebox3 = document.getElementById('labelPorcentajebox3');
-    const labelParteporcentajebox3 = document.getElementById('labelParteporcentajebox3');
-    const labelResultadototalbox3 = document.getElementById('labelResultadototalbox3');
+    // Se eliminan las referencias a etiquetas que no existen
+    // const labelPorcentajebox3 = document.getElementById('labelPorcentajebox3');
+    // const labelParteporcentajebox3 = document.getElementById('labelParteporcentajebox3');
+    // const labelResultadototalbox3 = document.getElementById('labelResultadototalbox3');
 
-    const inputValueLabels3 = document.querySelectorAll('.input2-value-label3');
-    const inputPercentageLabels3 = document.querySelectorAll('.input2-percentage-label3');
-    const input3ValueLabels3 = document.querySelectorAll('.input3-value-label3');
+    // Se obtienen los nuevos elementos con ID para mayor precisión
+    const inputValueTable = document.getElementById('input2-value-label3');
+    const input3ValueTable = document.getElementById('input3-value-label3');
+    const input2ValueFormula = document.getElementById('input2-value-label3-formula');
+    const input3ValueFormula = document.getElementById('input3-value-label3-formula');
+    const input2PercentageFormula = document.getElementById('input2-percentage-label3-formula');
+    const input3ValueChart = document.getElementById('input3-value-label3-chart');
+    const input2PercentageChart = document.getElementById('input2-percentage-label3-chart');
 
     const ctx = document.getElementById('myPieChart3').getContext('2d');
 
@@ -387,7 +391,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                 const value = dataset.data[i];
                                 const percentage = total > 0 ? ((value / total) * 100).toFixed(2) : 0;
                                 return {
-                                    text: `${label} ${percentage}%`,
+                                    text: `${label} (${percentage}%)`,
                                     fillStyle: dataset.backgroundColor[i],
                                     strokeStyle: dataset.backgroundColor[i],
                                     lineWidth: 1,
@@ -416,38 +420,44 @@ document.addEventListener('DOMContentLoaded', function () {
         const total = parseFloat(porcentajebox3.value);
         const parte = parseFloat(parteporcentajebox3.value);
 
-        if (!isNaN(total) && !isNaN(parte) && total > 0 && parte >= 0) {
+        if (!isNaN(total) && !isNaN(parte) && total > 0 && parte >= 0 && parte <= total) {
             const porcentajeParte = (parte / total) * 100;
             const restante = total - parte;
 
             // Actualizar campos visibles
             resultadototalbox3.value = porcentajeParte.toFixed(2) + ' %';
-            labelResultadototalbox3.textContent = porcentajeParte.toFixed(2);
 
-            labelPorcentajebox3.textContent = total;
-            labelParteporcentajebox3.textContent = parte;
+            // Actualización de los elementos con ID
+            if (inputValueTable) inputValueTable.textContent = parte;
+            if (input3ValueTable) input3ValueTable.textContent = total;
+            if (input2ValueFormula) input2ValueFormula.textContent = parte;
+            if (input3ValueFormula) input3ValueFormula.textContent = total;
+            if (input2PercentageFormula) input2PercentageFormula.textContent = porcentajeParte.toFixed(2) + "%";
+            if (input3ValueChart) input3ValueChart.textContent = total;
+            if (input2PercentageChart) input2PercentageChart.textContent = porcentajeParte.toFixed(2);
 
-            inputValueLabels3.forEach(label => { label.textContent = parte; });
-            inputPercentageLabels3.forEach(label => { label.textContent = porcentajeParte.toFixed(2) + "%"; });
-            input3ValueLabels3.forEach(label => { label.textContent = total; });
 
             // Actualizar gráfico
             myPieChart3.data.datasets[0].data = [restante, parte];
             myPieChart3.data.labels = [
-                ``,
-                ``
+                `Remaining: ${(restante)}`,
+                `Portion: ${(parte)}`
             ];
             myPieChart3.update();
         } else {
             resultadototalbox3.value = 'Error';
-            labelResultadototalbox3.textContent = 'Error';
 
-            inputValueLabels3.forEach(label => { label.textContent = ''; });
-            inputPercentageLabels3.forEach(label => { label.textContent = ''; });
-            input3ValueLabels3.forEach(label => { label.textContent = ''; });
+            // Limpiar campos en caso de error
+            if (inputValueTable) inputValueTable.textContent = '';
+            if (input3ValueTable) input3ValueTable.textContent = '';
+            if (input2ValueFormula) input2ValueFormula.textContent = '';
+            if (input3ValueFormula) input3ValueFormula.textContent = '';
+            if (input2PercentageFormula) input2PercentageFormula.textContent = '';
+            if (input3ValueChart) input3ValueChart.textContent = '';
+            if (input2PercentageChart) input2PercentageChart.textContent = '';
 
             myPieChart3.data.datasets[0].data = [0, 100];
-            myPieChart3.data.labels = ['Restante', 'Parte'];
+            myPieChart3.data.labels = ['Remaining', 'Portion'];
             myPieChart3.update();
         }
     }
@@ -461,32 +471,35 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-
-
 document.addEventListener('DOMContentLoaded', function () {
     const porcentajebox4 = document.getElementById('porcentajebox4');
     const parteporcentajebox4 = document.getElementById('parteporcentajebox4');
     const parteporcentajebox42 = document.getElementById('parteporcentajebox42');
     const resultadototalbox4 = document.getElementById('resultadototalbox4');
 
-    const labelPorcentajebox4 = document.getElementById('labelPorcentajebox4');
-    const labelParteporcentajebox4 = document.getElementById('labelParteporcentajebox4');
-    const labelResultadototalbox4 = document.getElementById('labelResultadototalbox4');
-    const partePorcentajeLabel = document.getElementById('partePorcentajeLabel');
+    // Se eliminan las referencias a etiquetas que no existen o se reemplazan por IDs
+    // const labelPorcentajebox4 = document.getElementById('labelPorcentajebox4');
+    // const labelParteporcentajebox4 = document.getElementById('labelParteporcentajebox4');
+    // const labelResultadototalbox4 = document.getElementById('labelResultadototalbox4');
 
-    const inputValueLabels4 = document.querySelectorAll('.input2-value-label4');
-    const inputPercentageLabels4 = document.querySelectorAll('.input2-percentage-label4');
-    const input3ValueLabels4 = document.querySelectorAll('.input3-value-label4');
-    const partePorcentajeLabels42 = document.querySelectorAll('.parteporcentajebox42');
+    // Referencias a los nuevos IDs
+    const partePorcentajeLabel = document.getElementById('partePorcentajeLabel');
+    const input2ValueLabel = document.getElementById('input2-value-label4');
+    const input2PercentageLabel = document.getElementById('input2-percentage-label4');
+    const parteporcentajebox42Label = document.getElementById('parteporcentajebox42-label');
+    const input2ValueFormula = document.getElementById('input2-value-label4-formula');
+    const parteporcentajebox42Formula = document.getElementById('parteporcentajebox42-formula');
+    const input2PercentageFormula = document.getElementById('input2-percentage-label4-formula');
+    const input3ValueFormula = document.getElementById('input3-value-label4-formula');
 
     const ctx = document.getElementById('myPieChart4').getContext('2d');
 
     const myPieChart4 = new Chart(ctx, {
         type: 'doughnut',
         data: {
-            labels: ['Parte Calculada', 'Restante'],
+            labels: ['Calculated Part', 'Remaining'],
             datasets: [{
-                label: 'Distribución',
+                label: 'Distribution',
                 data: [0, 100],
                 backgroundColor: ['#ed826b', '#7eb9a4'],
                 borderWidth: 1
@@ -494,7 +507,7 @@ document.addEventListener('DOMContentLoaded', function () {
         },
         options: {
             responsive: true,
-            cutout: '60%', // hace la dona
+            cutout: '60%',
             plugins: {
                 legend: {
                     position: 'top',
@@ -520,14 +533,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function manejarError() {
         resultadototalbox4.value = 'Error';
-        labelResultadototalbox4.textContent = 'Error';
 
-        inputValueLabels4.forEach(label => label.textContent = '');
-        inputPercentageLabels4.forEach(label => label.textContent = '');
-        input3ValueLabels4.forEach(label => label.textContent = '');
-        partePorcentajeLabels42.forEach(label => label.textContent = '');
+        if (input2ValueLabel) input2ValueLabel.textContent = '';
+        if (input2PercentageLabel) input2PercentageLabel.textContent = '';
+        if (parteporcentajebox42Label) parteporcentajebox42Label.textContent = '';
+        if (input2ValueFormula) input2ValueFormula.textContent = '';
+        if (parteporcentajebox42Formula) parteporcentajebox42Formula.textContent = '';
+        if (input2PercentageFormula) input2PercentageFormula.textContent = '';
+        if (input3ValueFormula) input3ValueFormula.textContent = '';
 
         myPieChart4.data.datasets[0].data = [0, 100];
+        myPieChart4.data.labels = ['Calculated Part', 'Remaining'];
         myPieChart4.update();
     }
 
@@ -539,28 +555,23 @@ document.addEventListener('DOMContentLoaded', function () {
         if (!isNaN(porcentaje) && !isNaN(parte) && !isNaN(parteExtra) && porcentaje > 0) {
             const resultadototal = (parte * parteExtra) / porcentaje;
             resultadototalbox4.value = resultadototal.toFixed(2);
-            labelResultadototalbox4.textContent = resultadototal.toFixed(2);
 
-            labelPorcentajebox4.textContent = porcentaje;
-            labelParteporcentajebox4.textContent = parte;
+            if (input2ValueLabel) input2ValueLabel.textContent = parte;
+            if (input2PercentageLabel) input2PercentageLabel.textContent = porcentaje;
+            if (parteporcentajebox42Label) parteporcentajebox42Label.textContent = parteExtra;
+            if (input2ValueFormula) input2ValueFormula.textContent = parte;
+            if (parteporcentajebox42Formula) parteporcentajebox42Formula.textContent = parteExtra;
+            if (input2PercentageFormula) input2PercentageFormula.textContent = porcentaje;
+            if (input3ValueFormula) input3ValueFormula.textContent = resultadototal.toFixed(2);
 
-            inputValueLabels4.forEach(label => label.textContent = parte);
-            inputPercentageLabels4.forEach(label => label.textContent = porcentaje);
-            input3ValueLabels4.forEach(label => label.textContent = resultadototal.toFixed(2));
-            partePorcentajeLabels42.forEach(label => label.textContent = parteExtra);
-
-            // Calcular el porcentaje real que representa la parteExtra
-            const porcentajeCalculado = (parteExtra * 100) / 100; // ya es porcentaje directo
-            const restante = 100 - parteExtra;
-
-            myPieChart4.data.datasets[0].data = [parteExtra, restante];
+            myPieChart4.data.datasets[0].data = [parteExtra, 100 - parteExtra];
             myPieChart4.data.labels = [
-                `${parteExtra.toFixed(2)}%`,
-                `${restante.toFixed(2)}%`
+                `Calculated: ${resultadototal.toFixed(2)} (${parteExtra.toFixed(2)}%)`,
+                `Remaining: ${(parte - resultadototal).toFixed(2)} (${(100 - parteExtra).toFixed(2)}%)`
             ];
             myPieChart4.update();
 
-partePorcentajeLabel.textContent = `Extra percentage: ${parteExtra.toFixed(2)}% / Result: ${resultadototal.toFixed(2)}`;
+            if (partePorcentajeLabel) partePorcentajeLabel.textContent = `Extra percentage: ${parteExtra.toFixed(2)}% / Result: ${resultadototal.toFixed(2)}`;
         } else {
             manejarError();
         }
@@ -571,9 +582,6 @@ partePorcentajeLabel.textContent = `Extra percentage: ${parteExtra.toFixed(2)}% 
     parteporcentajebox4.addEventListener('input', calcularResultado);
     parteporcentajebox42.addEventListener('input', calcularResultado);
 });
-
-
-
 
 
 

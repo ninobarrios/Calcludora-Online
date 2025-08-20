@@ -50,7 +50,6 @@ body {
     font-weight: normal;
     font-size: 50px;
     color: rgb(0, 0, 0);
-
 }
 
 .encabezado p {
@@ -88,14 +87,16 @@ body {
     height: 70vh;
 
 }
-
+.grafico p{
+    width: 70vw;
+}
 .grafico h2 {
     text-align: center;
     font-family: "Jost", sans-serif;
     font-weight: 400;
     font-size: 18px;
     width: 70%;
-    margin-top: 50px;
+    margin: 0px;
 }
 
 .graficotabla {
@@ -220,8 +221,9 @@ td {
     transform: scale(1.05);
 }
 
-.card h4 {
+.card h3 {
     color: #000000;
+    font-size: 18px;
     margin-bottom: 0.5rem;
 }
 
@@ -319,7 +321,7 @@ input[type="number"]::-webkit-outer-spin-button {
     background-color: #7eb9a4 !important;
     font-weight: bold;
     padding: 5px 0px;
-    width: 100%;
+    width: auto;
 }
 
 .showmorebtn:hover {
@@ -1346,4 +1348,12 @@ text-align: center;
 .data-value {
     font-weight: bold;
     color: #111;
+}
+
+
+.exercises{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
