@@ -416,14 +416,21 @@ input[type="number"]::-webkit-outer-spin-button {
 .parteporcentajebox42,
 .input2-value-label3,
 .input2-percentage-label3,
-.input2-value-label2,
+.input2-percentage-label-formula,
 .input2-percentage-label,
 .input2-value-label,
-.input3-value-label {
-    font-weight: bold;
-    color: #00796b;
+.input3-value-label,
+.input2-value-label-formula,
+.input3-value-label3,
+.input2-value-label2,
+.input2-value-label3-formula,
+.input3-value-label3-formula,
+.input2-value-label4-formula,
+.parteporcentajebox42-formula,
+.input2-percentage-label4-formula {
+    font-weight: bold !important;
+    color: #00796b !important;
 }
-
 
 .variable {
     font-weight: bold;
