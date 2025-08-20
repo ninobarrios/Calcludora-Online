@@ -240,12 +240,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const parteporcentajebox2 = document.getElementById('parteporcentajebox2');
     const resultadototalbox2 = document.getElementById('resultadototalbox2');
 
-    // Se eliminan estas líneas ya que los labels no existen o son usados para otra cosa
-    // const labelPorcentajebox2 = document.getElementById('labelPorcentajebox2');
-    // const labelParteporcentajebox2 = document.getElementById('labelParteporcentajebox2');
-    // const labelResultadototalbox2 = document.getElementById('labelResultadototalbox2');
-
-    // Se obtienen los nuevos elementos con ID para mayor precisión
     const input2ValueTable = document.getElementById('input2-value-label2');
     const input2PercentageTable = document.getElementById('input2-percentage-label');
     const input2ValueFormula = document.getElementById('input2-value-label-formula');
@@ -296,7 +290,6 @@ document.addEventListener('DOMContentLoaded', function () {
             const resultadototal = (parte * 100) / porcentaje;
             resultadototalbox2.value = resultadototal.toFixed(2);
 
-            // Actualización de los elementos con ID
             if (input2ValueTable) input2ValueTable.textContent = parte;
             if (input2PercentageTable) input2PercentageTable.textContent = porcentaje;
             if (input2ValueFormula) input2ValueFormula.textContent = parte;
@@ -305,7 +298,6 @@ document.addEventListener('DOMContentLoaded', function () {
             if (input3ValueChart) input3ValueChart.textContent = resultadototal.toFixed(2);
             if (input2PercentageChart) input2PercentageChart.textContent = porcentaje;
 
-            // Resto del código del gráfico
             const partePorcentaje = (parte * 100) / resultadototal;
             const restante = 100 - partePorcentaje;
 
@@ -319,7 +311,6 @@ document.addEventListener('DOMContentLoaded', function () {
         } else {
             resultadototalbox2.value = 'Error';
 
-            // Limpieza de los elementos con ID
             if (input2ValueTable) input2ValueTable.textContent = '';
             if (input2PercentageTable) input2PercentageTable.textContent = '';
             if (input2ValueFormula) input2ValueFormula.textContent = '';
@@ -345,16 +336,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 document.addEventListener('DOMContentLoaded', function () {
-    const porcentajebox3 = document.getElementById('porcentajebox3'); // Total
-    const parteporcentajebox3 = document.getElementById('parteporcentajebox3'); // Parte del total
+    const porcentajebox3 = document.getElementById('porcentajebox3'); 
+    const parteporcentajebox3 = document.getElementById('parteporcentajebox3'); 
     const resultadototalbox3 = document.getElementById('resultadototalbox3');
 
-    // Se eliminan las referencias a etiquetas que no existen
-    // const labelPorcentajebox3 = document.getElementById('labelPorcentajebox3');
-    // const labelParteporcentajebox3 = document.getElementById('labelParteporcentajebox3');
-    // const labelResultadototalbox3 = document.getElementById('labelResultadototalbox3');
-
-    // Se obtienen los nuevos elementos con ID para mayor precisión
+   
     const inputValueTable = document.getElementById('input2-value-label3');
     const input3ValueTable = document.getElementById('input3-value-label3');
     const input2ValueFormula = document.getElementById('input2-value-label3-formula');
@@ -424,10 +410,8 @@ document.addEventListener('DOMContentLoaded', function () {
             const porcentajeParte = (parte / total) * 100;
             const restante = total - parte;
 
-            // Actualizar campos visibles
             resultadototalbox3.value = porcentajeParte.toFixed(2) + ' %';
 
-            // Actualización de los elementos con ID
             if (inputValueTable) inputValueTable.textContent = parte;
             if (input3ValueTable) input3ValueTable.textContent = total;
             if (input2ValueFormula) input2ValueFormula.textContent = parte;
@@ -437,7 +421,6 @@ document.addEventListener('DOMContentLoaded', function () {
             if (input2PercentageChart) input2PercentageChart.textContent = porcentajeParte.toFixed(2);
 
 
-            // Actualizar gráfico
             myPieChart3.data.datasets[0].data = [restante, parte];
             myPieChart3.data.labels = [
                 `Remaining: ${(restante)}`,
@@ -447,7 +430,6 @@ document.addEventListener('DOMContentLoaded', function () {
         } else {
             resultadototalbox3.value = 'Error';
 
-            // Limpiar campos en caso de error
             if (inputValueTable) inputValueTable.textContent = '';
             if (input3ValueTable) input3ValueTable.textContent = '';
             if (input2ValueFormula) input2ValueFormula.textContent = '';
@@ -477,12 +459,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const parteporcentajebox42 = document.getElementById('parteporcentajebox42');
     const resultadototalbox4 = document.getElementById('resultadototalbox4');
 
-    // Se eliminan las referencias a etiquetas que no existen o se reemplazan por IDs
-    // const labelPorcentajebox4 = document.getElementById('labelPorcentajebox4');
-    // const labelParteporcentajebox4 = document.getElementById('labelParteporcentajebox4');
-    // const labelResultadototalbox4 = document.getElementById('labelResultadototalbox4');
-
-    // Referencias a los nuevos IDs
+ 
     const partePorcentajeLabel = document.getElementById('partePorcentajeLabel');
     const input2ValueLabel = document.getElementById('input2-value-label4');
     const input2PercentageLabel = document.getElementById('input2-percentage-label4');
@@ -594,7 +571,7 @@ function generarPreguntas() {
 
     for (let i = 0; i < 8; i++) {
         const porcentaje = porcentajes[Math.floor(Math.random() * porcentajes.length)];
-        const base = Math.floor(Math.random() * 901) + 100; // de 100 a 1000
+        const base = Math.floor(Math.random() * 901) + 100; 
         const resultado = parseFloat(((porcentaje / 100) * base).toFixed(2));
 
         preguntas.push({ id: `q${i + 1}`, porcentaje, base, resultado });
@@ -621,10 +598,10 @@ function checkAnswers() {
         if (!isNaN(userAnswer)) {
             if (Math.abs(userAnswer - pregunta.resultado) < 0.01) {
                 resultSpan.textContent = `✅ ${pregunta.resultado}`;
-                resultSpan.style.color = "#2e7d32"; // verde
+                resultSpan.style.color = "#2e7d32"; 
             } else {
                 resultSpan.textContent = `❌ ${userAnswer} (✔ ${pregunta.resultado})`;
-                resultSpan.style.color = "#d32f2f"; // rojo
+                resultSpan.style.color = "#d32f2f"; 
             }
         } else {
             resultSpan.textContent = "-";
@@ -650,18 +627,15 @@ ids.forEach(id => {
 
     if (!input) return;
 
-    // Quitar el % al enfocar
     input.addEventListener("focus", () => {
         input.value = input.value.replace('%', '');
     });
 
-    // Mientras se escribe, mantener solo números y agregar %
     input.addEventListener("input", () => {
         let val = input.value.replace(/[^0-9]/g, '');
         input.value = val ? val + '%' : '';
     });
 
-    // Al salir, asegurarse que tenga el %
     input.addEventListener("blur", () => {
         if (input.value !== '' && !input.value.includes('%')) {
             input.value += '%';
@@ -669,7 +643,6 @@ ids.forEach(id => {
     });
 });
 
-// Función para obtener el número sin el %
 function getPorcentajeSinSimbolo(id) {
     const val = document.getElementById(id)?.value || '';
     return parseFloat(val.replace('%', '')) || 0;

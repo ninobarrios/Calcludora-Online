@@ -373,7 +373,6 @@ input[type="number"]::-webkit-outer-spin-button {
     height: auto;
     word-break: break-word;
     white-space: normal;
-    /* IMPORTANTE para saltos de línea */
 }
 
 .grafico_formula td {
@@ -401,7 +400,6 @@ input[type="number"]::-webkit-outer-spin-button {
 
 .fila-alta td {
     height: 80px;
-    /* altura personalizada */
 }
 
 .grafico_formula thead {
@@ -789,8 +787,8 @@ button:hover {
 }
 
 table {
-    width: 100%; /* Asegura que la tabla ocupe todo el ancho disponible */
-    border-collapse: collapse; /* Evita bordes dobles */
+    width: 100%; 
+    border-collapse: collapse; 
 }
 
 
