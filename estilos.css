@@ -22,7 +22,6 @@ body {
 
 .encabezado {
     width: 100vw;
-    height: 100vh;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -70,7 +69,6 @@ body {
 
 .main h2 {
     font-weight: normal;
-    width: 60%;
     font-size: 20px;
     text-align: center;
     margin-top: 50px;
@@ -161,7 +159,6 @@ table {
 }
 
 td {
-    border: 1px solid #ccc;
     width: 10%;
     height: 10%;
     text-align: center;
@@ -170,7 +167,8 @@ td {
 .cell {
     width: 10%;
     height: 10%;
-    border-radius: 15px;
+    border-radius: 50%;
+    background-color: #e6e6e6;
 }
 
 .calculograficotablacontent span {
@@ -641,7 +639,7 @@ button:hover {
 
 /**/
 #quizSection {
-    background: linear-gradient(135deg, #f0f8ff, #e6f7ff);
+    background-color: #f8f8f8;
     padding: 40px;
     border-radius: 20px;
     max-width: 1100px;
@@ -652,7 +650,7 @@ button:hover {
 
 #quizSection h2 {
     text-align: center;
-    color: #003366;
+    color: #000000;
     font-size: 32px;
     margin-bottom: 10px;
 }
@@ -691,7 +689,7 @@ button:hover {
 
 .quiz-card h4 {
     font-size: 18px;
-    color: #003366;
+    color: #000000;
     margin-bottom: 12px;
 }
 
